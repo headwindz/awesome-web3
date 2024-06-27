@@ -8,3 +8,8 @@
 
 * [Blockchain 101 - A Visual Demo](https://www.youtube.com/watch?v=_160oMzblY8) - YouTube video by Anders Brownworth
 * [Blockchain 101 - Part 2 - Public / Private Keys and Signing](https://www.youtube.com/watch?v=_160oMzblY8) - YouTube video by Anders Brownworth
+
+
+## Blogs
+
+* [Anders Brownworth](https://andersbrownworth.com/)
