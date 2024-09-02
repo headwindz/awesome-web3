@@ -2,7 +2,13 @@
 
 ## Courses
 
-[Web3 and Blockchain Fundamentals](https://www.coursera.org/learn/web3-blockchain-fundamentals) - Coursera course by INSEAD 🆓
+| Name                                                                                              | Producer                                    | Platform
+| -                                                                                                 | -                                           | -
+| [Web3 and Blockchain Fundamentals](https://www.coursera.org/learn/web3-blockchain-fundamentals)   | INSEAD                                      | Coursera
+| [How to Get Into Blockchain](https://www.coursera.org/learn/how-to-get-into-blockchain/)          | University of Leeds                         | Coursera
+| [Introduction to Blockchain](https://www.coursera.org/learn/blockchain-)                          | Pohang University of Science and Technology | Coursera
+| [Bitcoin and Cryptocurrency Technologies](https://www.coursera.org/learn/cryptocurrency)          | Princeton University                        | Coursera
+
 
 ## Videos
 
