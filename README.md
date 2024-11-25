@@ -9,6 +9,7 @@
 | [Introduction to Blockchain](https://www.coursera.org/learn/blockchain-)                          | Pohang University of Science and Technology | Coursera
 | [Bitcoin and Cryptocurrency Technologies](https://www.coursera.org/learn/cryptocurrency)          | Princeton University                        | Coursera
 | [Web3 Basics Learning Track](https://www.hackquest.io/en/learning-track/10247d47-34d8-4d1e-a7c1-6519e2d639b2)          | - | Hackquest
+| [CryptoBytes](https://www.ablockofcrypto.com/courses/category/crypto-bytes) | - | CryptoBytes
 
 
 ## Videos
@@ -24,7 +25,6 @@
 ## Newsletter
 
 * [ChianFeeds](https://substack.chainfeeds.xyz/subscribe?utm_source=email&utm_campaign=email-subscribe&r=3k3zv1&next=https%3A%2F%2Fsubstack.chainfeeds.xyz%2Fp%2Fbased-rollup-alpha&utm_medium=email)
-
 * [The Block](https://www.theblock.co/newsletters?utm_campaign=website&utm_medium=referral&utm_source=newsletter) - bring you the latest news and analysis of the fast-moving crypto and DeFi markets
-
 * [Bitcoin Breakdown](https://www.btcbreakdown.com/subscribe) - Bitcoin-only twice-weekly newsletter helping you become a truly sovereign individual.
+* [Bay Area Times](https://www.bayareatimes.com/) - The visual daily newsletter on business and tech
