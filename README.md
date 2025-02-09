@@ -28,3 +28,5 @@
 * [The Block](https://www.theblock.co/newsletters?utm_campaign=website&utm_medium=referral&utm_source=newsletter) - bring you the latest news and analysis of the fast-moving crypto and DeFi markets
 * [Bitcoin Breakdown](https://www.btcbreakdown.com/subscribe) - Bitcoin-only twice-weekly newsletter helping you become a truly sovereign individual.
 * [Bay Area Times](https://www.bayareatimes.com/) - The visual daily newsletter on business and tech
+* [Bankless](https://www.bankless.com/) - Master the frontier of Crypto
+* [The Defiant](https://thedefiant.io/) - Get an edge in Crypto
