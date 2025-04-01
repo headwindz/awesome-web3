@@ -30,3 +30,7 @@
 * [Bay Area Times](https://www.bayareatimes.com/) - The visual daily newsletter on business and tech
 * [Bankless](https://www.bankless.com/) - Master the frontier of Crypto
 * [The Defiant](https://thedefiant.io/) - Get an edge in Crypto
+
+## Careers
+
+* [A Better Web3](https://abetterweb3.notion.site/) - A curated list of web3 job opportunities
