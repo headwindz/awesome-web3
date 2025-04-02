@@ -2,21 +2,26 @@
 
 ## Courses
 
-| Name                                                                                              | Producer                                    | Platform
-| -                                                                                                 | -                                           | -
-| [Web3 and Blockchain Fundamentals](https://www.coursera.org/learn/web3-blockchain-fundamentals)   | INSEAD                                      | Coursera
-| [How to Get Into Blockchain](https://www.coursera.org/learn/how-to-get-into-blockchain/)          | University of Leeds                         | Coursera
-| [Introduction to Blockchain](https://www.coursera.org/learn/blockchain-)                          | Pohang University of Science and Technology | Coursera
-| [Bitcoin and Cryptocurrency Technologies](https://www.coursera.org/learn/cryptocurrency)          | Princeton University                        | Coursera
-| [Web3 Basics Learning Track](https://www.hackquest.io/en/learning-track/10247d47-34d8-4d1e-a7c1-6519e2d639b2)          | - | Hackquest
-| [CryptoBytes](https://www.ablockofcrypto.com/courses/category/crypto-bytes) | - | CryptoBytes
-
+* [Web3 and Blockchain Fundamentals](https://www.coursera.org/learn/web3-blockchain-fundamentals) 
+* [How to Get Into Blockchain](https://www.coursera.org/learn/how-to-get-into-blockchain/) 
+* [Introduction to Blockchain](https://www.coursera.org/learn/blockchain-) 
+* [Bitcoin and Cryptocurrency Technologies](https://www.coursera.org/learn/cryptocurrency)
+* [Hackquest Learning Track](https://www.hackquest.io/learning-track) - Hackquest
+* [Web3 University](https://www.web3.university/)
+* [Blockchain and Money](https://ocw.mit.edu/courses/15-s12-blockchain-and-money-fall-2018/) - MIT open course by Gary Gensler
+* [Cryptocurrencies, Blockchains, and Smart Contracts](https://cs251.stanford.edu/)
+* [Blockchain Technology and Application](http://zhenxiao.com/blockchain/)
 
 ## Videos
 
 * [Blockchain 101 - A Visual Demo](https://www.youtube.com/watch?v=_160oMzblY8) - YouTube video by Anders Brownworth
 * [Blockchain 101 - Part 2 - Public / Private Keys and Signing](https://www.youtube.com/watch?v=_160oMzblY8) - YouTube video by Anders Brownworth
+* [Next Bitcon](https://www.youtube.com/playlist?list=PLPOkajvdhrB3R3cg8KtN8Sr5bRKsYDljM)
+* [Stability and Freedom in Chaos: The Story of Tether ](https://www.youtube.com/watch?v=ZPaY3kdhVTw)
 
+## Books
+
+* [https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook) - Mastering Bitcoin is a technical book that explains what Bitcoin is and how it works.
 
 ## Blogs
 
@@ -30,6 +35,10 @@
 * [Bay Area Times](https://www.bayareatimes.com/) - The visual daily newsletter on business and tech
 * [Bankless](https://www.bankless.com/) - Master the frontier of Crypto
 * [The Defiant](https://thedefiant.io/) - Get an edge in Crypto
+
+## Articles
+
+* [Introduction to bitcoin, web3 and blockchain](https://www.web3brand.io/p/web3-101-materials)
 
 ## Careers
 
