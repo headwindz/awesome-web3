@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GitHubLogoIcon, MoonIcon, SunIcon, ArrowLeftIcon, ExternalLinkIcon } from "@radix-ui/react-icons"
+import { ArrowLeftIcon, ExternalLinkIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 
 type Resource = {
@@ -285,7 +285,6 @@ const resources: Resource[] = [
 
 export default function ResourcesPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
-  const [theme, setTheme] = useState<"light" | "dark">("light")
 
   const categories = [
     "All",
@@ -302,12 +301,6 @@ export default function ResourcesPage() {
   const filteredResources =
     selectedCategory === "All" ? resources : resources.filter((resource) => resource.category === selectedCategory)
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light"
-    setTheme(newTheme)
-    document.documentElement.classList.toggle("dark")
-  }
-
   const getCategoryColor = (category: string) => {
     const colors = {
       Documentation: "from-blue-500 to-cyan-500",
@@ -323,48 +316,25 @@ export default function ResourcesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-50">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="size-7 rounded-lg bg-gradient-to-br from-[#F7931A] to-[#FFA500] text-white flex items-center justify-center font-bold text-lg shadow-lg">
-              ₿
-            </div>
-            <span className="font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Web3 History
-            </span>
-          </Link>
-          <div className="flex items-center gap-1">
-            <Button variant="ghost" size="icon" asChild>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                <GitHubLogoIcon className="size-4" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {theme === "light" ? <MoonIcon className="size-4" /> : <SunIcon className="size-4" />}
-            </Button>
-          </div>
-        </div>
-      </header>
+    <div className="bg-background min-h-screen">
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-6 md:py-8 animate-fade-in">
+      <section className="container mx-auto py-6 px-4 md:py-8">
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-3"
+          className="text-sm text-muted-foreground mb-3 gap-1.5 inline-flex items-center hover:text-foreground"
         >
           <ArrowLeftIcon className="size-3.5" />
           Back to Timeline
         </Link>
-        <h1 className="text-2xl md:text-3xl font-bold mb-1.5 text-balance">Resources</h1>
-        <p className="text-muted-foreground text-sm max-w-2xl text-balance">
+        <h1 className="font-bold text-balance mb-1.5 text-2xl md:text-3xl">Resources</h1>
+        <p className="text-muted-foreground text-sm text-balance max-w-2xl">
           Curated links to help you learn more about Web3, blockchain, and decentralized technology
         </p>
       </section>
 
       {/* Filter Section */}
-      <section className="container mx-auto px-4 mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+      <section className="container mx-auto mb-4 px-4">
         <div className="flex flex-wrap gap-1.5">
           {categories.map((category) => (
             <Button
@@ -389,32 +359,25 @@ export default function ResourcesPage() {
               href={resource.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block resource-card"
+              className="block"
             >
               <Card
-                className="h-full relative overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 flex flex-col animate-fade-in cursor-pointer"
-                style={{
-                  animationDelay: `${index * 0.02 + 0.2}s`,
-                  opacity: 0,
-                  animationFillMode: "forwards",
-                }}
+                className="cursor-pointer flex flex-col h-full border-2 animate-fade-in relative overflow-hidden hover:border-primary/50"
               >
                 <div
-                  className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${getCategoryColor(resource.category)} opacity-60 group-hover:opacity-100 transition-opacity`}
+                  className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${getCategoryColor(resource.category)} opacity-60 group-hover:opacity-100`}
                 />
-
-                <div className="absolute top-2 right-2 size-16 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
-
+                <div className="bg-gradient-to-br rounded-full from-primary/5 to-secondary/5 top-2 right-2 absolute size-16 blur-2xl group-hover:scale-150" />
                 <CardHeader className="flex-1 p-3 pb-2 relative">
-                  <div className="flex items-start justify-between gap-2 mb-1">
-                    <CardTitle className="text-sm font-bold leading-snug line-clamp-2 group-hover:text-primary transition-colors">
+                  <div className="flex mb-1 gap-2 items-start justify-between">
+                    <CardTitle className="font-bold text-sm leading-snug line-clamp-2 group-hover:text-primary">
                       {resource.title}
                     </CardTitle>
-                    <div className="size-6 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all">
-                      <ExternalLinkIcon className="size-3 text-primary group-hover:text-secondary transition-colors" />
+                    <div className="bg-gradient-to-br rounded-full flex from-primary/10 to-secondary/10 flex-shrink-0 items-center justify-center size-6 group-hover:scale-110 group-hover:rotate-12">
+                      <ExternalLinkIcon className="text-primary size-3 group-hover:text-secondary" />
                     </div>
                   </div>
-                  <CardDescription className="text-xs leading-relaxed line-clamp-2 text-muted-foreground/90">
+                  <CardDescription className="text-xs leading-relaxed text-muted-foreground/90 line-clamp-2">
                     {resource.description}
                   </CardDescription>
                 </CardHeader>
@@ -427,7 +390,7 @@ export default function ResourcesPage() {
                   </div>
                 </CardContent>
 
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-secondary/0 opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none" />
+                <div className="bg-gradient-to-br via-transparent from-primary/0 to-secondary/0 opacity-0 inset-0 absolute pointer-events-none group-hover:opacity-10" />
               </Card>
             </a>
           ))}
