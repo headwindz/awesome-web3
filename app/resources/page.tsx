@@ -2,8 +2,19 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeftIcon, ExternalLinkIcon } from "@radix-ui/react-icons"
+import { Card } from "@/components/ui/card"
+import {
+  ArrowLeftIcon,
+  ExternalLinkIcon,
+  FileTextIcon,
+  ReaderIcon,
+  RocketIcon,
+  CodeIcon,
+  VideoIcon,
+  EnvelopeClosedIcon,
+  UpdateIcon,
+  BackpackIcon,
+} from "@radix-ui/react-icons"
 import Link from "next/link"
 
 type Resource = {
@@ -287,15 +298,15 @@ export default function ResourcesPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
 
   const categories = [
-    "All",
-    "Documentation",
-    "Courses",
-    "Learning Resources",
-    "Developer Tools",
-    "Video Content",
-    "Newsletters",
-    "News & Updates",
-    "Careers",
+    { name: "All", icon: null },
+    { name: "Documentation", icon: FileTextIcon },
+    { name: "Courses", icon: ReaderIcon },
+    { name: "Learning Resources", icon: RocketIcon },
+    { name: "Developer Tools", icon: CodeIcon },
+    { name: "Video Content", icon: VideoIcon },
+    { name: "Newsletters", icon: EnvelopeClosedIcon },
+    { name: "News & Updates", icon: UpdateIcon },
+    { name: "Careers", icon: BackpackIcon },
   ]
 
   const filteredResources =
@@ -315,20 +326,24 @@ export default function ResourcesPage() {
     return colors[category as keyof typeof colors] || "from-gray-500 to-slate-500"
   }
 
+  const getCategoryIcon = (category: string) => {
+    const categoryData = categories.find((c) => c.name === category)
+    return categoryData?.icon
+  }
+
   return (
     <div className="bg-background min-h-screen">
-
       {/* Hero Section */}
-      <section className="container mx-auto py-6 px-4 md:py-8">
+      <section className="container mx-auto py-4 px-4 md:py-6">
         <Link
           href="/"
-          className="text-sm text-muted-foreground mb-3 gap-1.5 inline-flex items-center hover:text-foreground"
+          className="text-sm text-muted-foreground mb-2 gap-1.5 inline-flex items-center hover:text-foreground"
         >
           <ArrowLeftIcon className="size-3.5" />
           Back to Timeline
         </Link>
-        <h1 className="font-bold text-balance mb-1.5 text-2xl md:text-3xl">Resources</h1>
-        <p className="text-muted-foreground text-sm text-balance max-w-2xl">
+        <h1 className="font-bold text-balance mb-1 text-2xl md:text-3xl">Resources</h1>
+        <p className="text-muted-foreground text-sm text-balance max-w-3xl">
           Curated links to help you learn more about Web3, blockchain, and decentralized technology
         </p>
       </section>
@@ -336,64 +351,77 @@ export default function ResourcesPage() {
       {/* Filter Section */}
       <section className="container mx-auto mb-4 px-4">
         <div className="flex flex-wrap gap-1.5">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={selectedCategory === category ? "default" : "outline"}
-              size="sm"
-              className="h-7 text-xs px-2.5"
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </Button>
-          ))}
+          {categories.map((category) => {
+            const Icon = category.icon
+            return (
+              <Button
+                key={category.name}
+                variant={selectedCategory === category.name ? "default" : "outline"}
+                size="sm"
+                className="h-7 text-xs px-2.5 gap-1.5"
+                onClick={() => setSelectedCategory(category.name)}
+              >
+                {Icon && <Icon className="size-3" />}
+                {category.name}
+              </Button>
+            )
+          })}
         </div>
       </section>
 
       {/* Resources Grid */}
-      <section className="container mx-auto px-4 pb-10">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {filteredResources.map((resource, index) => (
-            <a
-              key={resource.id}
-              href={resource.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <Card
-                className="cursor-pointer flex flex-col h-full border-2 animate-fade-in relative overflow-hidden hover:border-primary/50"
+      <section className="container mx-auto px-4 pb-8">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+          {filteredResources.map((resource, index) => {
+            return (
+              <a
+                key={resource.id}
+                href={resource.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+                style={{ animationDelay: `${index * 30}ms` }}
               >
-                <div
-                  className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${getCategoryColor(resource.category)} opacity-60 group-hover:opacity-100`}
-                />
-                <div className="bg-gradient-to-br rounded-full from-primary/5 to-secondary/5 top-2 right-2 absolute size-16 blur-2xl group-hover:scale-150" />
-                <CardHeader className="flex-1 p-3 pb-2 relative">
-                  <div className="flex mb-1 gap-2 items-start justify-between">
-                    <CardTitle className="font-bold text-sm leading-snug line-clamp-2 group-hover:text-primary">
+                <Card className="cursor-pointer h-full border hover:border-primary/50 transition-all duration-300 relative overflow-hidden backdrop-blur-sm group-hover:-translate-y-1 group-hover:shadow-xl group-hover:shadow-primary/20">
+                  {/* Gradient top border */}
+                  <div
+                    className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${getCategoryColor(resource.category)}`}
+                  />
+
+                  {/* Animated gradient background on hover */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${getCategoryColor(resource.category)} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                  />
+
+                  {/* Content */}
+                  <div className="p-4 relative flex flex-col gap-2.5 h-full">
+                    {/* Title */}
+                    <h3 className="font-semibold text-sm leading-snug line-clamp-2 group-hover:text-primary transition-colors">
                       {resource.title}
-                    </CardTitle>
-                    <div className="bg-gradient-to-br rounded-full flex from-primary/10 to-secondary/10 flex-shrink-0 items-center justify-center size-6 group-hover:scale-110 group-hover:rotate-12">
-                      <ExternalLinkIcon className="text-primary size-3 group-hover:text-secondary" />
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3 flex-1">
+                      {resource.description}
+                    </p>
+
+                    {/* Footer with category and link icon */}
+                    <div className="flex items-center justify-between pt-1 border-t border-border/50">
+                      <span
+                        className={`text-[11px] font-medium bg-gradient-to-r ${getCategoryColor(resource.category)} bg-clip-text text-transparent`}
+                      >
+                        {resource.category}
+                      </span>
+                      <ExternalLinkIcon className="size-3.5 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                     </div>
                   </div>
-                  <CardDescription className="text-xs leading-relaxed text-muted-foreground/90 line-clamp-2">
-                    {resource.description}
-                  </CardDescription>
-                </CardHeader>
 
-                <CardContent className="p-3 pt-0 relative">
-                  <div
-                    className={`inline-flex items-center gap-1 text-[10px] font-medium bg-gradient-to-r ${getCategoryColor(resource.category)} bg-clip-text text-transparent px-2 py-0.5 rounded-full border border-primary/20`}
-                  >
-                    {resource.category}
-                  </div>
-                </CardContent>
-
-                <div className="bg-gradient-to-br via-transparent from-primary/0 to-secondary/0 opacity-0 inset-0 absolute pointer-events-none group-hover:opacity-10" />
-              </Card>
-            </a>
-          ))}
+                  {/* Shine effect on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/0 to-white/0 group-hover:via-white/10 transition-all duration-700 pointer-events-none" />
+                </Card>
+              </a>
+            )
+          })}
         </div>
       </section>
     </div>

@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     icon: "/icon.svg",
     apple: "/icon.svg",
   },
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
