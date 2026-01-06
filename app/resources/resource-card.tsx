@@ -39,7 +39,7 @@ export function ResourceCard({ resource, index, showCategory = true }: ResourceC
         />
 
         {/* Content */}
-        <div className="px-4 relative flex flex-col gap-2.5 h-full">
+        <div className="px-3 py-3 relative flex flex-col gap-2 h-full md:px-4 md:gap-2.5">
           {/* Title */}
           <h3 className="font-semibold text-sm leading-snug line-clamp-2 group-hover:text-primary transition-colors">
             {title}
@@ -51,7 +51,7 @@ export function ResourceCard({ resource, index, showCategory = true }: ResourceC
           </p>
 
           {/* Footer with category and link icon */}
-          {showCategory && <div className="flex items-center justify-between pt-2 border-t border-border/50">
+          <div className="flex items-center justify-between pt-2 border-t border-border/50">
             {showCategory && (
               <span
                 className={`text-[11px] font-medium bg-gradient-to-r ${categoryColor} bg-clip-text text-transparent`}
@@ -60,7 +60,7 @@ export function ResourceCard({ resource, index, showCategory = true }: ResourceC
               </span>
             )}
             <ExternalLinkIcon className={`size-3.5 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 ${!showCategory ? 'ml-auto' : ''}`} />
-          </div>}
+          </div>
         </div>
 
       </Card>
