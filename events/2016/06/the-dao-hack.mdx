@@ -1,0 +1,50 @@
+---
+title: The DAO Hack and Ethereum Hard Fork
+tags: [the dao, hack, ethereum, hard fork, ethereum classic]
+date: 2016-06-17
+---
+
+On June 17, 2016, an attacker exploits a vulnerability in **The DAO** smart contract, draining 3.6 million ETH (~$50 million at the time) in what becomes the most consequential event in Ethereum's history.
+
+## What Was The DAO?
+
+The DAO (Decentralized Autonomous Organization) was an ambitious experiment in decentralized venture capital. Between April and May 2016, it raised **150 million USD** worth of ETH from over 11,000 contributors, making it the largest crowdfunding campaign in history at that time.
+
+The concept: token holders could vote on investment proposals, and smart contracts would automatically execute the community's decisions without traditional management structure.
+
+## The Exploit
+
+The attacker discovered a **recursive call vulnerability** (later known as a "reentrancy attack") in The DAO's withdrawal function. By repeatedly calling the withdrawal function before the balance was updated, they could drain funds far exceeding their entitlement.
+
+**Timeline:**
+
+- **June 17**: Attack begins, draining ~30% of The DAO's funds
+- **June 17-20**: Community debates response options
+- **June 24**: Soft fork proposal to freeze funds fails due to DoS vulnerability
+- **July 15**: White Hat group secures remaining funds
+- **July 20**: Hard fork executes, returning funds to original contributors
+
+## The Great Debate
+
+The Ethereum community faced an existential question: Should the blockchain be rolled back to reverse the theft, or should the principle of **"code is law"** be upheld regardless of consequences?
+
+**Arguments for fork:**
+
+- Save innocent investors from catastrophic losses
+- The exploit violated the intent of The DAO's code
+- Ethereum was young enough to establish that malicious exploits won't be tolerated
+
+**Arguments against fork:**
+
+- Violates blockchain immutability principle
+- Sets dangerous precedent for future interventions
+- "Code is law" - if smart contracts are law, bugs are features
+
+## The Split
+
+The hard fork proceeded with ~85-90% community support, creating two chains:
+
+- **Ethereum (ETH)** - Continues with the fork, funds returned to DAO token holders
+- **Ethereum Classic (ETC)** - Maintains original chain where the hack remains part of history
+
+This philosophical split highlighted a fundamental tension in blockchain governance: the clash between immutability as a technical property versus the community's ability to coordinate around shared values.

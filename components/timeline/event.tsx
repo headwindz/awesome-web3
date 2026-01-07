@@ -7,40 +7,13 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import type { Event as EventType } from '@/lib/events'
-import { MDXRemote } from 'next-mdx-remote'
 
 interface EventProps {
   event: EventType
 }
 
-const mdxComponents = {
-  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="mb-3 leading-relaxed last:mb-0" {...props} />
-  ),
-  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a
-      className="text-primary underline-offset-4 hover:underline"
-      target="_blank"
-      rel={'noopener noreferrer'}
-      {...props}
-    />
-  ),
-  ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="list-disc pl-4 space-y-2" {...props} />
-  ),
-  ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol className="list-decimal pl-4 space-y-2" {...props} />
-  ),
-  li: (props: React.LiHTMLAttributes<HTMLLIElement>) => (
-    <li className="leading-relaxed" {...props} />
-  ),
-  strong: (props: React.HTMLAttributes<HTMLElement>) => (
-    <strong className="font-semibold" {...props} />
-  ),
-}
-
 export function Event({ event }: EventProps) {
-  const { month, year, title, mdxSource } = event
+  const { month, year, title, mdxContent } = event
 
   return (
     <div className="group grid gap-4 grid-cols-[auto_1fr] relative md:gap-6 lg:gap-10">
@@ -62,15 +35,15 @@ export function Event({ event }: EventProps) {
       </div>
 
       <div className="pl-2 md:pl-3">
-        <Card className="border transition-all group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:scale-[1.01] group-hover:border-primary/50 group-hover:-translate-y-1">
-          <CardHeader className="space-y-2 p-3 pb-2 md:p-4">
+        <Card className="border transition-all group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:scale-[1.01] group-hover:border-primary/50 group-hover:-translate-y-1 gap-1">
+          <CardHeader className="px-3 md:px-4">
             <CardTitle className="font-bold text-base md:text-lg lg:text-xl group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-primary group-hover:to-secondary group-hover:text-transparent">
               {title}
             </CardTitle>
           </CardHeader>
-          <CardContent className="p-3 pt-0 md:p-4 md:pt-0">
+          <CardContent className="px-3 md:px-4">
             <CardDescription className="text-xs md:text-sm leading-relaxed text-foreground/70 prose prose-sm prose-neutral max-w-none dark:prose-invert">
-              <MDXRemote {...mdxSource} components={mdxComponents} />
+              {mdxContent}
             </CardDescription>
           </CardContent>
         </Card>
