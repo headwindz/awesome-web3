@@ -58,7 +58,7 @@ export function Header() {
       <header className="border-b border-border sticky top-0 bg-background/80 backdrop-blur-xl z-50">
         <div className="container mx-auto px-4 h-14 flex justify-between items-center">
           {/* left content */}
-          <div className="flex items-center gap-2 min-w-0">
+          <div className="flex items-center gap-2 min-w-0 h-full">
             <Image src="/icon.svg" alt="Awesome web3" width={24} height={24} className="flex-shrink-0" />
             <span className="font-semibold text-base md:text-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent capitalize truncate">
               Awesome web3
