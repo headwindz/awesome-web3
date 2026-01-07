@@ -1,8 +1,8 @@
 import { getAllEvents } from "@/lib/events"
-import TimelineClient from "./timeline-client"
+import TimelineClient from "../components/timeline"
 
-export default function Home() {
-  const events = getAllEvents()
+export default async function Home() {
+  const events = await getAllEvents()
 
   return <TimelineClient events={events} />
 }

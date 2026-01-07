@@ -1,6 +1,8 @@
-import fs from "fs"
+import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
+import { serialize } from "next-mdx-remote/serialize"
+import type { MDXRemoteSerializeResult } from "next-mdx-remote"
 
 export type Event = {
   id: string
@@ -11,6 +13,7 @@ export type Event = {
   description: string
   category: string
   slug: string
+  mdxSource: MDXRemoteSerializeResult
 }
 
 const eventsDirectory = path.join(process.cwd(), "events")
@@ -28,38 +31,36 @@ function getMonthName(month: number): string {
   return months[month - 1] || "JAN"
 }
 
-export function getAllEvents(): Event[] {
+export async function getAllEvents(): Promise<Event[]> {
   const events: Event[] = []
 
-  // Check if events directory exists
-  if (!fs.existsSync(eventsDirectory)) {
+  try {
+    await fs.access(eventsDirectory)
+  } catch (error) {
     return events
   }
 
-  // Read all year directories
-  const years = fs.readdirSync(eventsDirectory).filter((file) => {
-    const yearPath = path.join(eventsDirectory, file)
-    return fs.statSync(yearPath).isDirectory()
-  })
+  const years = (await fs.readdir(eventsDirectory, { withFileTypes: true }))
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name)
 
   for (const year of years) {
     const yearPath = path.join(eventsDirectory, year)
-    const months = fs.readdirSync(yearPath).filter((file) => {
-      const monthPath = path.join(yearPath, file)
-      return fs.statSync(monthPath).isDirectory()
-    })
+    const months = (await fs.readdir(yearPath, { withFileTypes: true }))
+      .filter((dirent) => dirent.isDirectory())
+      .map((dirent) => dirent.name)
 
     for (const month of months) {
       const monthPath = path.join(yearPath, month)
-      const files = fs.readdirSync(monthPath).filter((file) => file.endsWith(".mdx"))
+      const files = (await fs.readdir(monthPath)).filter((file) => file.endsWith(".mdx"))
 
       for (const file of files) {
         const filePath = path.join(monthPath, file)
-        const fileContents = fs.readFileSync(filePath, "utf8")
+        const fileContents = await fs.readFile(filePath, "utf8")
         const { data, content } = matter(fileContents)
+        const mdxSource = await serialize(content)
 
         const slug = file.replace(/\.mdx$/, "")
-        const eventDate = new Date(data.date)
         const yearNum = parseInt(year)
         const monthNum = parseInt(month)
 
@@ -72,6 +73,7 @@ export function getAllEvents(): Event[] {
           description: content.trim(),
           category: getCategoryFromYear(yearNum),
           slug: `${year}/${month}/${slug}`,
+          mdxSource,
         })
       }
     }
@@ -79,10 +81,16 @@ export function getAllEvents(): Event[] {
 
   // Sort events by date (oldest first)
   events.sort((a, b) => {
-    const dateA = new Date(`${a.year}-${a.month}-01`)
-    const dateB = new Date(`${b.year}-${b.month}-01`)
+    const dateA = new Date(parseInt(a.year), getMonthNameIndex(a.month), 1)
+    const dateB = new Date(parseInt(b.year), getMonthNameIndex(b.month), 1)
     return dateA.getTime() - dateB.getTime()
   })
 
   return events
+}
+
+function getMonthNameIndex(monthName: string): number {
+  const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+  const index = months.indexOf(monthName.toUpperCase())
+  return index >= 0 ? index : 0
 }
