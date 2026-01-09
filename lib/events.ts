@@ -75,14 +75,14 @@ export async function getAllEvents(): Promise<Event[]> {
         const filePath = path.join(monthPath, file)
         const fileContents = await fs.readFile(filePath, 'utf8')
         const { data, content } = matter(fileContents)
-        
+
         const { content: mdxContent } = await evaluate({
           source: content,
           options: {
             parseFrontmatter: false,
-            scope: data
+            scope: data,
           },
-          components: mdxComponents
+          components: mdxComponents,
         })
 
         const slug = file.replace(/\.mdx$/, '')
