@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import type React from 'react'
 import {
   Card,
@@ -6,6 +9,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import type { Event as EventType } from '@/lib/events'
 
 interface EventProps {
@@ -14,6 +19,7 @@ interface EventProps {
 
 export function Event({ event }: EventProps) {
   const { month, year, title, mdxContent } = event
+  const [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <div className="group grid gap-4 grid-cols-[auto_1fr] relative md:gap-6 lg:gap-10">
@@ -35,14 +41,31 @@ export function Event({ event }: EventProps) {
       </div>
 
       <div className="pl-2 md:pl-3">
-        <Card className="border transition-all group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:scale-[1.01] group-hover:border-primary/50 group-hover:-translate-y-1 gap-1">
-          <CardHeader className="px-3 md:px-4">
-            <CardTitle className="font-bold text-base md:text-lg lg:text-xl group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-primary group-hover:to-secondary group-hover:text-transparent">
+        <Card className="border transition-all group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:border-primary/50 gap-1">
+          <CardHeader className="px-3 md:px-4 flex flex-row items-start justify-between space-y-0">
+            <CardTitle className="font-bold text-base md:text-lg lg:text-xl group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-primary group-hover:to-secondary group-hover:text-transparent flex-1 pr-2">
               {title}
             </CardTitle>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="h-8 w-8 text-muted-foreground hover:text-primary hover:bg-primary/10 flex-shrink-0 -mt-1"
+              aria-label={isExpanded ? 'Collapse event' : 'Expand event'}
+            >
+              {isExpanded ? (
+                <ChevronUp className="h-5 w-5" />
+              ) : (
+                <ChevronDown className="h-5 w-5" />
+              )}
+            </Button>
           </CardHeader>
-          <CardContent className="px-3 md:px-4">
-            <CardDescription className="text-xs md:text-sm leading-relaxed text-foreground/70 prose prose-sm prose-neutral max-w-none dark:prose-invert">
+          <CardContent className="px-3 md:px-4 pb-3 md:pb-4">
+            <CardDescription
+              className={`text-xs md:text-sm leading-relaxed text-foreground/70 prose prose-sm prose-neutral max-w-none dark:prose-invert transition-all duration-300 ${
+                isExpanded ? '' : 'line-clamp-8'
+              }`}
+            >
               {mdxContent}
             </CardDescription>
           </CardContent>
