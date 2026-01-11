@@ -139,7 +139,7 @@ export function Filter({
               onClick={clearAllYears}
               className="h-6 text-xs px-2"
             >
-              Clear all
+              Clear Year selections
             </Button>
           </div>
         )}

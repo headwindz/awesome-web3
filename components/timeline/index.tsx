@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import { Filter } from './filter'
 import { Event } from './event'
+import { Empty } from './empty'
 import type { Event as EventType } from '@/lib/events'
 
 interface TimelineClientProps {
@@ -56,7 +57,9 @@ export default function TimelineClient({ events }: TimelineClientProps) {
 
       <section className="container mx-auto px-4 pb-8 relative md:pb-12">
         <div className="mx-auto max-w-6xl relative">
-          <div className="bg-gradient-to-b from-primary via-secondary to-primary top-0 bottom-0 left-14 w-0.5 absolute md:left-20 lg:left-28" />
+          {filteredEvents.length > 0 && (
+            <div className="bg-gradient-to-b from-primary via-secondary to-primary top-0 bottom-0 left-14 w-0.5 absolute md:left-20 lg:left-28" />
+          )}
 
           {/* Events */}
           <div className="space-y-6 md:space-y-8">
@@ -67,11 +70,14 @@ export default function TimelineClient({ events }: TimelineClientProps) {
                 ))}
               </>
             ) : (
-              <div className="text-center py-12">
-                <p className="text-muted-foreground text-lg">
-                  No events found matching your search.
-                </p>
-              </div>
+              <Empty
+                searchQuery={searchQuery}
+                selectedYears={selectedYears}
+                onClearFilters={() => {
+                  setSearchQuery('')
+                  setSelectedYears([])
+                }}
+              />
             )}
           </div>
         </div>
