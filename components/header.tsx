@@ -1,12 +1,18 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { GitHubLogoIcon, MoonIcon, SunIcon, HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
-import Link from "next/link"
-import Image from "next/image"
-import { useTheme } from "next-themes"
-import { usePathname } from "next/navigation"
+import { useEffect, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import {
+  GitHubLogoIcon,
+  MoonIcon,
+  SunIcon,
+  HamburgerMenuIcon,
+  Cross1Icon,
+} from '@radix-ui/react-icons'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useTheme } from 'next-themes'
+import { usePathname } from 'next/navigation'
 
 export function Header() {
   const { resolvedTheme, setTheme } = useTheme()
@@ -20,19 +26,35 @@ export function Header() {
 
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = "unset"
+      document.body.style.overflow = 'unset'
     }
     return () => {
-      document.body.style.overflow = "unset"
+      document.body.style.overflow = 'unset'
     }
   }, [mobileMenuOpen])
 
+  const handleThemeChange = () => {
+    // Add class to disable transitions
+    document.documentElement.classList.add('disable-transitions')
+
+    // Change theme
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
+
+    // Re-enable transitions after theme change completes
+    // Use double requestAnimationFrame to ensure theme has been applied
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.documentElement.classList.remove('disable-transitions')
+      })
+    })
+  }
+
   const navItems = [
-    { href: "/", label: "History",  },
-    { href: "/resources", label: "Resources", },
-    { href: "/components", label: "Components" },
+    { href: '/', label: 'History' },
+    { href: '/resources', label: 'Resources' },
+    { href: '/components', label: 'Components' },
   ]
 
   const handleNavClick = () => {
@@ -42,15 +64,15 @@ export function Header() {
   const getNavLinkClassName = (isActive: boolean) =>
     `text-muted-foreground hover:text-primary transition-colors relative h-full flex items-center px-3 rounded-md ${
       isActive
-        ? "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-secondary"
-        : ""
+        ? 'after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-secondary'
+        : ''
     }`
 
   const getMobileNavLinkClassName = (isActive: boolean) =>
     `block py-3 px-4 text-base rounded-md transition-colors ${
       isActive
-        ? "bg-primary text-primary-foreground font-medium"
-        : "text-muted-foreground hover:text-primary hover:bg-primary/10"
+        ? 'bg-primary text-primary-foreground font-medium'
+        : 'text-muted-foreground hover:text-primary hover:bg-primary/10'
     }`
 
   return (
@@ -59,7 +81,13 @@ export function Header() {
         <div className="container mx-auto px-4 h-14 flex justify-between items-center">
           {/* left content */}
           <div className="flex items-center gap-2 min-w-0 h-full">
-            <Image src="/icon.svg" alt="Awesome web3" width={24} height={24} className="flex-shrink-0" />
+            <Image
+              src="/icon.svg"
+              alt="Awesome web3"
+              width={24}
+              height={24}
+              className="flex-shrink-0"
+            />
             <span className="font-semibold text-base md:text-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent capitalize truncate">
               Awesome web3
             </span>
@@ -78,19 +106,32 @@ export function Header() {
           </div>
           {/* right content */}
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" asChild className="hover:bg-primary/10">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="ghost"
+              size="icon"
+              asChild
+              className="hover:bg-primary/10"
+            >
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <GitHubLogoIcon className="size-5" />
               </a>
             </Button>
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")} 
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleThemeChange}
               className="hover:bg-primary/10 cursor-pointer"
             >
               {mounted ? (
-                resolvedTheme === "light" ? <MoonIcon className="size-5" /> : <SunIcon className="size-5" />
+                resolvedTheme === 'light' ? (
+                  <MoonIcon className="size-5" />
+                ) : (
+                  <SunIcon className="size-5" />
+                )
               ) : (
                 <div className="size-5" />
               )}
@@ -102,7 +143,11 @@ export function Header() {
               className="md:hidden hover:bg-primary/10"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <Cross1Icon className="size-5" /> : <HamburgerMenuIcon className="size-5" />}
+              {mobileMenuOpen ? (
+                <Cross1Icon className="size-5" />
+              ) : (
+                <HamburgerMenuIcon className="size-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -119,7 +164,7 @@ export function Header() {
       {/* Mobile Menu */}
       <div
         className={`fixed top-14 right-0 bottom-0 w-64 bg-background border-l border-border z-40 md:hidden transform transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <nav className="flex flex-col p-4 gap-2">
