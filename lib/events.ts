@@ -14,6 +14,7 @@ export type Event = {
   description: string
   category: string
   slug: string
+  tags: string[]
   mdxContent: React.JSX.Element
 }
 
@@ -98,6 +99,7 @@ export async function getAllEvents(): Promise<Event[]> {
           description: content.trim(),
           category: getCategoryFromYear(yearNum),
           slug: `${year}/${month}/${slug}`,
+          tags: Array.isArray(data.tags) ? data.tags : [],
           mdxContent,
         })
       }

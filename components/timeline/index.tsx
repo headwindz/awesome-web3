@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { Categories } from './categories'
+import { useState, useMemo } from 'react'
+import { Filter } from './filter'
 import { Event } from './event'
 import type { Event as EventType } from '@/lib/events'
 
@@ -10,12 +10,30 @@ interface TimelineClientProps {
 }
 
 export default function TimelineClient({ events }: TimelineClientProps) {
-  const [selectedCategory, setSelectedCategory] = useState('ALL')
+  const [selectedYears, setSelectedYears] = useState<string[]>([])
+  const [searchQuery, setSearchQuery] = useState('')
 
-  const filteredEvents =
-    selectedCategory === 'ALL'
-      ? events
-      : events.filter((event) => event.category === selectedCategory)
+  const filteredEvents = useMemo(() => {
+    let filtered = events
+
+    // Filter by years
+    if (selectedYears.length > 0) {
+      filtered = filtered.filter((event) => selectedYears.includes(event.year))
+    }
+
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase()
+      filtered = filtered.filter(
+        (event) =>
+          event.title.toLowerCase().includes(query) ||
+          event.description.toLowerCase().includes(query) ||
+          event.tags.some((tag) => tag.toLowerCase().includes(query))
+      )
+    }
+
+    return filtered
+  }, [events, selectedYears, searchQuery])
 
   return (
     <div className="bg-background min-h-screen relative overflow-hidden">
@@ -29,9 +47,11 @@ export default function TimelineClient({ events }: TimelineClientProps) {
         </p>
       </section>
 
-      <Categories
-        selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
+      <Filter
+        selectedYears={selectedYears}
+        onYearsChange={setSelectedYears}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
       />
 
       <section className="container mx-auto px-4 pb-8 relative md:pb-12">
@@ -40,9 +60,19 @@ export default function TimelineClient({ events }: TimelineClientProps) {
 
           {/* Events */}
           <div className="space-y-6 md:space-y-8">
-            {filteredEvents.map((event) => (
-              <Event key={event.id} event={event} />
-            ))}
+            {filteredEvents.length > 0 ? (
+              <>
+                {filteredEvents.map((event) => (
+                  <Event key={event.id} event={event} />
+                ))}
+              </>
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground text-lg">
+                  No events found matching your search.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
