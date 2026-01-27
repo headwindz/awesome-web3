@@ -1,0 +1,27 @@
+[
+  {
+    "term": "Smart Contract",
+    "definition": "A self-executing contract with the terms of the agreement directly written into code.",
+    "details": "Smart contracts run on blockchain networks and automatically enforce and execute the terms of an agreement when predefined conditions are met. They are immutable and transparent, reducing the need for intermediaries." 
+  },
+  {
+    "term": "Decentralized Application (dApp)",
+    "definition": "An application that runs on a decentralized network, typically a blockchain.",
+    "details": "dApps leverage smart contracts and blockchain technology to operate without a central authority, providing increased transparency, security, and user control." 
+  },
+  {
+    "term": "NFT (Non-Fungible Token)",
+    "definition": "A unique digital asset that represents ownership of a specific item or piece of content on the blockchain.",
+    "details": "NFTs are used for digital art, collectibles, gaming items, and more. Each NFT is distinct and cannot be exchanged on a one-to-one basis with another NFT." 
+  },
+  {
+    "term": "DAO (Decentralized Autonomous Organization)",
+    "definition": "An organization governed by smart contracts and community voting, without centralized leadership.",
+    "details": "DAOs enable collective decision-making and resource management on the blockchain, with rules and operations encoded in smart contracts." 
+  },
+  {
+    "term": "DeFi (Decentralized Finance)",
+    "definition": "A movement to recreate and improve traditional financial services using blockchain technology.",
+    "details": "DeFi platforms offer services like lending, borrowing, trading, and earning interest, all without traditional banks or intermediaries." 
+  }
+]

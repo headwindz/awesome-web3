@@ -54,6 +54,7 @@ export function Header() {
   const navItems = [
     { href: '/', label: 'History' },
     { href: '/resources', label: 'Resources' },
+    { href: '/glossary', label: 'Glossary' },
     { href: '/components', label: 'Components' },
   ]
 
@@ -77,10 +78,10 @@ export function Header() {
 
   return (
     <>
-      <header className="border-b border-border sticky top-0 bg-background/80 backdrop-blur-xl z-50">
-        <div className="container mx-auto px-4 h-14 flex justify-between items-center">
+      <header className="border-b border-border bg-background/80 top-0 z-50 sticky backdrop-blur-xl">
+        <div className="container flex mx-auto h-14 px-4 justify-between items-center">
           {/* left content */}
-          <div className="flex items-center gap-2 min-w-0 h-full">
+          <div className="flex h-full min-w-0 gap-2 items-center">
             <Image
               src="/icon.svg"
               alt="Awesome web3"
@@ -88,11 +89,11 @@ export function Header() {
               height={24}
               className="flex-shrink-0"
             />
-            <span className="font-semibold text-base md:text-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent capitalize truncate">
+            <span className="bg-gradient-to-r bg-clip-text from-primary to-secondary font-semibold text-base text-transparent capitalize truncate md:text-lg">
               Awesome web3
             </span>
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1 ml-3 h-full">
+            <nav className="h-full ml-3 gap-1 hidden items-center md:flex">
               {navItems.map((item) => {
                 const { href, label } = item
                 const isActive = pathname === href
@@ -105,7 +106,7 @@ export function Header() {
             </nav>
           </div>
           {/* right content */}
-          <div className="flex items-center gap-2">
+          <div className="flex gap-2 items-center">
             <Button
               variant="ghost"
               size="icon"
@@ -124,7 +125,7 @@ export function Header() {
               variant="ghost"
               size="icon"
               onClick={handleThemeChange}
-              className="hover:bg-primary/10 cursor-pointer"
+              className="cursor-pointer hover:bg-primary/10"
             >
               {mounted ? (
                 resolvedTheme === 'light' ? (
@@ -156,7 +157,7 @@ export function Header() {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 md:hidden"
+          className="bg-background/80 inset-0 z-40 fixed backdrop-blur-sm md:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
