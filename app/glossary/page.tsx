@@ -173,8 +173,9 @@ export default function Glossary() {
             </div>
           </main>
 
-          {/* Sidebar - Fixed on desktop (Right Side) */}
-          <aside className="lg:w-64 lg:shrink-0 py-8 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto lg:pl-16 order-1 lg:order-2">
+          {/* Sidebar - Sticky on desktop (Right Side) */}
+          <aside className="lg:w-64 lg:shrink-0 py-8 order-1 lg:order-2">
+            <div className="lg:sticky lg:top-8 lg:pl-16">
             {/* Alphabet Navigation */}
             <nav className="space-y-1">
               <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-4 block">
@@ -212,6 +213,7 @@ export default function Glossary() {
                 })}
               </div>
             </nav>
+            </div>
           </aside>
         </div>
       </div>
