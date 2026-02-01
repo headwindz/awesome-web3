@@ -1,14 +1,9 @@
 interface EmptyProps {
-  searchQuery: string
   selectedYears: string[]
   onClearFilters: () => void
 }
 
-export function Empty({
-  searchQuery,
-  selectedYears,
-  onClearFilters,
-}: EmptyProps) {
+export function Empty({ selectedYears, onClearFilters }: EmptyProps) {
   return (
     <div className="flex flex-col items-center justify-center py-20 px-4 text-center">
       <div className="mb-6">
@@ -30,7 +25,7 @@ export function Empty({
       <h3 className="text-xl font-semibold mb-2 md:text-2xl">
         No events found
       </h3>
-      {(searchQuery || selectedYears.length > 0) && (
+      {selectedYears.length > 0 && (
         <button
           onClick={onClearFilters}
           className="px-4 py-2 text-sm font-medium text-primary border border-primary rounded-md hover:bg-primary/10 transition-colors"

@@ -12,7 +12,6 @@ interface TimelineClientProps {
 
 export default function TimelineClient({ events }: TimelineClientProps) {
   const [selectedYears, setSelectedYears] = useState<string[]>([])
-  const [searchQuery, setSearchQuery] = useState('')
 
   const filteredEvents = useMemo(() => {
     let filtered = events
@@ -22,19 +21,8 @@ export default function TimelineClient({ events }: TimelineClientProps) {
       filtered = filtered.filter((event) => selectedYears.includes(event.year))
     }
 
-    // Filter by search query
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase()
-      filtered = filtered.filter(
-        (event) =>
-          event.title.toLowerCase().includes(query) ||
-          event.description.toLowerCase().includes(query) ||
-          event.tags.some((tag) => tag.toLowerCase().includes(query))
-      )
-    }
-
     return filtered
-  }, [events, selectedYears, searchQuery])
+  }, [events, selectedYears])
 
   return (
     <div className="bg-background min-h-screen relative overflow-hidden">
@@ -48,12 +36,7 @@ export default function TimelineClient({ events }: TimelineClientProps) {
         </p>
       </section>
 
-      <Filter
-        selectedYears={selectedYears}
-        onYearsChange={setSelectedYears}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-      />
+      <Filter selectedYears={selectedYears} onYearsChange={setSelectedYears} />
 
       <section className="container mx-auto px-4 pb-8 relative md:pb-12">
         <div className="mx-auto max-w-6xl relative">
@@ -71,10 +54,8 @@ export default function TimelineClient({ events }: TimelineClientProps) {
               </>
             ) : (
               <Empty
-                searchQuery={searchQuery}
                 selectedYears={selectedYears}
                 onClearFilters={() => {
-                  setSearchQuery('')
                   setSelectedYears([])
                 }}
               />
