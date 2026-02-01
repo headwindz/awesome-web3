@@ -22,31 +22,29 @@ export function Overview({
             Overview
           </span>
           <div className="flex flex-wrap lg:flex-col gap-1">
-            {ALPHABET.map((letter) => {
-              const isAvailable = availableLetters.has(letter)
-              const isActive = activeLetter === letter
-              return (
-                <button
-                  key={letter}
-                  onClick={() => isAvailable && onLetterClick(letter)}
-                  disabled={!isAvailable}
-                  className={`
+            {ALPHABET.filter((letter) => availableLetters.has(letter)).map(
+              (letter) => {
+                const isActive = activeLetter === letter
+                return (
+                  <button
+                    key={letter}
+                    onClick={() => onLetterClick(letter)}
+                    className={`
                         cursor-pointer relative px-2 py-1 text-sm font-medium rounded-lg transition-all text-left
                         ${
-                          isActive && isAvailable
+                          isActive
                             ? 'bg-foreground text-background'
-                            : isAvailable
-                              ? 'text-foreground hover:bg-muted'
-                              : 'text-muted-foreground/30 cursor-not-allowed'
+                            : 'text-foreground hover:bg-muted'
                         }
                       `}
-                >
-                  <span className="flex items-center gap-3">
-                    <span className="w-6 text-center">{letter}</span>
-                  </span>
-                </button>
-              )
-            })}
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className="w-6 text-center">{letter}</span>
+                    </span>
+                  </button>
+                )
+              }
+            )}
           </div>
         </nav>
       </div>

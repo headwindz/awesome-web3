@@ -300,6 +300,14 @@
     "definition": "A distributed file storage protocol for storing and accessing files, websites, and data. IPFS is commonly used to store NFT metadata and images in a decentralized manner, ensuring permanence and censorship resistance."
   },
   {
+    "term": "KYB (Know Your Business)",
+    "definition": "A verification process for businesses similar to KYC for individuals. KYB requires companies to provide documentation proving their legal existence, ownership structure, and legitimacy before accessing financial services or crypto platforms. Typically includes business registration, tax documents, and beneficial ownership information."
+  },
+  {
+    "term": "KYC (Know Your Customer)",
+    "definition": "A regulatory process requiring financial services to verify customer identities before providing services. In crypto, KYC typically involves submitting government ID, proof of address, and sometimes selfie verification. While KYC enhances security and regulatory compliance, it contradicts crypto's privacy ethos and is criticized by decentralization advocates."
+  },
+  {
     "term": "Layer 1",
     "definition": "The base blockchain architecture that processes and records transactions. Examples include Bitcoin, Ethereum, Solana, and Cardano. L1s have their own native tokens and consensus mechanisms."
   },
@@ -454,6 +462,18 @@
   {
     "term": "Pump and Dump",
     "definition": "A market manipulation scheme where the price is artificially inflated then sold off for profit. Coordinated buying creates hype and FOMO, driving prices up before orchestrators sell, leaving late buyers with losses."
+  },
+  {
+    "term": "QE (Quantitative Easing)",
+    "definition": "A monetary policy where central banks inject money into the economy by purchasing government bonds and securities. QE increases money supply, lowers interest rates, and typically weakens currency value. Many cite QE policies as a driver for Bitcoin adoption, as increased fiat supply reinforces the case for fixed-supply assets."
+  },
+  {
+    "term": "QT (Quantitative Tightening)",
+    "definition": "The opposite of quantitative easing, where central banks reduce money supply by selling assets and not reinvesting bond proceeds. QT tightens financial conditions, raises interest rates, and often correlates with crypto market downturns as liquidity decreases and investors move to safer assets."
+  },
+  {
+    "term": "Quantum Computing",
+    "definition": "Advanced computing technology using quantum mechanics principles that could potentially break current cryptographic algorithms. While current quantum computers pose no immediate threat to blockchain security, future quantum computers could theoretically compromise public-key cryptography. The crypto industry is developing quantum-resistant algorithms to prepare for this eventuality."
   },
   {
     "term": "Rollup",
