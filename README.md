@@ -1,30 +1,119 @@
-# Web3 project links
+# Awesome web3 📚
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+A comprehensive web3 educational platform featuring a complete timeline of cryptocurrency and blockchain history, an extensive glossary of web3 terms, and curated learning resources.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/headwindzz/v0-web3-project-links)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/nAazLdVdzXB)
+## 🌟 Features
 
-## Overview
+### 📅 Interactive timeline
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+- Comprehensive chronological timeline of web3 history
+- Filter events by year with an intuitive interface
+- Detailed descriptions with links to primary sources
 
-## Deployment
+### 📖 Web3 glossary
 
-Your project is live at:
+- Extensive dictionary of web3, blockchain, and cryptocurrency terms
+- Alphabetically organized with search functionality
+- Clear, concise definitions for beginners and experts alike
+- Quick navigation with letter-based filtering
 
-**[https://vercel.com/headwindzz/v0-web3-project-links](https://vercel.com/headwindzz/v0-web3-project-links)**
+### 🔗 Curated resources
 
-## Build your app
+- Categorized collection of web3 learning materials
+- Links to tools, documentation, tutorials, and educational content
+- Filter resources by category for easy discovery
 
-Continue building your app on:
+## 🚀 Getting started - Local development
 
-**[https://v0.app/chat/nAazLdVdzXB](https://v0.app/chat/nAazLdVdzXB)**
+### Prerequisites
 
-## How It Works
+- Node.js 18+
+- pnpm
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/awesome-web3.git
+
+# Navigate to the project directory
+cd awesome-web3
+
+# Install dependencies
+pnpm install
+
+# Run the development server
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the application.
+
+## 🛠️ Tech stack
+
+- **Framework:** Next.js 15 with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** Radix UI primitives
+- **Content:** MDX for event descriptions
+
+## 📁 Project structure
+
+```
+awesome-web3/
+├── app/                   # Next.js app directory
+│   ├── page.tsx           # Timeline homepage
+│   ├── glossary/          # Glossary feature
+│   └── resources/         # Resources section
+├── components/            # Reusable React components
+├── events/                # MDX files for timeline events
+├── data/                  # JSON data files
+├── lib/                   # Utility functions and helpers
+└── public/                # Static assets
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Add historical events:** Submit new significant web3 events with proper documentation
+2. **Expand the glossary:** Add new terms or improve existing definitions
+3. **Share resources:** Suggest valuable learning resources and tools
+4. **Improve documentation:** Help make the content more accessible
+
+### Adding a new event
+
+Create a new MDX file in the appropriate year/month directory:
+
+```bash
+events/YYYY/MM/event-name.mdx
+```
+
+### Adding a new glossary term
+
+Add a new entry in the `data/glossary.json` file:
+
+```json
+{
+  "term": "New Term",
+  "definition": "Definition of the new term."
+}
+```
+
+### Adding a new resource
+
+Add a new entry in the `data/resources.json` file:
+
+```json
+{
+  "title": "Resource Title",
+  "url": "https://resource-link.com",
+  "category": "Category Name",
+  "description": "Brief description of the resource."
+}
+```
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+Built with ❤️ for the Web3 community
