@@ -106,49 +106,8 @@ export default function Glossary() {
 
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row">
-          {/* Sidebar - Fixed on desktop */}
-          <aside className="lg:w-64 lg:shrink-0 py-8 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto">
-            {/* Alphabet Navigation */}
-            <nav className="space-y-1">
-              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-4 block">
-                Navigate
-              </span>
-              <div className="flex flex-wrap lg:flex-col gap-1">
-                {ALPHABET.map((letter) => {
-                  const isAvailable = availableLetters.has(letter)
-                  const isActive = activeLetter === letter
-                  return (
-                    <button
-                      key={letter}
-                      onClick={() => isAvailable && scrollToLetter(letter)}
-                      disabled={!isAvailable}
-                      className={`
-                        relative px-3 py-1.5 text-sm font-medium rounded-lg transition-all text-left
-                        ${isActive && isAvailable
-                          ? 'bg-foreground text-background'
-                          : isAvailable
-                            ? 'text-foreground hover:bg-muted'
-                            : 'text-muted-foreground/30 cursor-not-allowed'
-                        }
-                      `}
-                    >
-                      <span className="flex items-center gap-3">
-                        <span className="w-6 text-center">{letter}</span>
-                        {isAvailable && (
-                          <span className="hidden lg:inline text-xs text-muted-foreground">
-                            {groupedByLetter[letter]?.length || 0} terms
-                          </span>
-                        )}
-                      </span>
-                    </button>
-                  )
-                })}
-              </div>
-            </nav>
-          </aside>
-
           {/* Main Content */}
-          <main className="flex-1 lg:pl-16 py-8 lg:py-12 lg:border-l lg:border-border">
+          <main className="flex-1 lg:pr-16 py-8 lg:py-12 lg:border-r lg:border-border order-2 lg:order-1">
             {letters.length === 0 ? (
               <div className="text-center py-24">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-muted mb-6">
@@ -213,6 +172,47 @@ export default function Glossary() {
               </button>
             </div>
           </main>
+
+          {/* Sidebar - Fixed on desktop (Right Side) */}
+          <aside className="lg:w-64 lg:shrink-0 py-8 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto lg:pl-16 order-1 lg:order-2">
+            {/* Alphabet Navigation */}
+            <nav className="space-y-1">
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-4 block">
+                Navigate
+              </span>
+              <div className="flex flex-wrap lg:flex-col gap-1">
+                {ALPHABET.map((letter) => {
+                  const isAvailable = availableLetters.has(letter)
+                  const isActive = activeLetter === letter
+                  return (
+                    <button
+                      key={letter}
+                      onClick={() => isAvailable && scrollToLetter(letter)}
+                      disabled={!isAvailable}
+                      className={`
+                        relative px-3 py-1.5 text-sm font-medium rounded-lg transition-all text-left
+                        ${isActive && isAvailable
+                          ? 'bg-foreground text-background'
+                          : isAvailable
+                            ? 'text-foreground hover:bg-muted'
+                            : 'text-muted-foreground/30 cursor-not-allowed'
+                        }
+                      `}
+                    >
+                      <span className="flex items-center gap-3">
+                        <span className="w-6 text-center">{letter}</span>
+                        {isAvailable && (
+                          <span className="hidden lg:inline text-xs text-muted-foreground">
+                            {groupedByLetter[letter]?.length || 0} terms
+                          </span>
+                        )}
+                      </span>
+                    </button>
+                  )
+                })}
+              </div>
+            </nav>
+          </aside>
         </div>
       </div>
     </main>
