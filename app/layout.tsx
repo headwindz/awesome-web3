@@ -11,13 +11,12 @@ const _geist = Geist({ subsets: ['latin'] })
 const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Web3 Timeline | History of Blockchain Evolution',
+  title: 'Awesome web3',
   description: 'Awesome timeline of web3 and blockchain technology evolution.',
   icons: {
     icon: '/icon.svg',
     apple: '/icon.svg',
   },
-  generator: 'v0.app',
 }
 
 export default function RootLayout({

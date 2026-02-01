@@ -52,7 +52,7 @@ export function Header() {
   }
 
   const navItems = [
-    { href: '/', label: 'History' },
+    { href: '/', label: 'Timeline' },
     { href: '/resources', label: 'Resources' },
     { href: '/glossary', label: 'Glossary' },
     { href: '/components', label: 'Components' },
