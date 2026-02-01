@@ -1,27 +1,622 @@
 [
   {
-    "term": "Smart Contract",
-    "definition": "A self-executing contract with the terms of the agreement directly written into code.",
-    "details": "Smart contracts run on blockchain networks and automatically enforce and execute the terms of an agreement when predefined conditions are met. They are immutable and transparent, reducing the need for intermediaries." 
+    "term": "51% Attack",
+    "definition": "An attack on a blockchain network where a single entity or group controls more than 50% of the mining hash rate or staking power. With majority control, attackers can potentially double-spend coins, prevent transactions from being confirmed, and disrupt the network's operation."
   },
   {
-    "term": "Decentralized Application (dApp)",
-    "definition": "An application that runs on a decentralized network, typically a blockchain.",
-    "details": "dApps leverage smart contracts and blockchain technology to operate without a central authority, providing increased transparency, security, and user control." 
+    "term": "ABI (Application Binary Interface)",
+    "definition": "A set of rules that defines how software components interact with smart contracts at the binary level. In Web3, an ABI specifies how to encode and decode data when calling smart contract functions, represented in JSON format."
   },
   {
-    "term": "NFT (Non-Fungible Token)",
-    "definition": "A unique digital asset that represents ownership of a specific item or piece of content on the blockchain.",
-    "details": "NFTs are used for digital art, collectibles, gaming items, and more. Each NFT is distinct and cannot be exchanged on a one-to-one basis with another NFT." 
+    "term": "Alpha",
+    "definition": "Insider or early information about a project that is not yet widely known. In crypto communities, sharing alpha means providing valuable insights about opportunities before they become public knowledge."
+  },
+  {
+    "term": "Ape",
+    "definition": "To invest heavily into a token or project quickly without thorough research. The term 'aping in' reflects impulsive or FOMO-driven investment decisions, often considered risky behavior."
+  },
+  {
+    "term": "Arbitrum",
+    "definition": "A Layer 2 scaling solution for Ethereum using optimistic rollup technology. Arbitrum enables faster and cheaper transactions while maintaining Ethereum's security. It's fully EVM-compatible."
+  },
+  {
+    "term": "Avalanche",
+    "definition": "A high-performance Layer 1 blockchain platform with sub-second finality. Avalanche uses a novel consensus protocol and supports multiple custom blockchains (subnets). Its native token is AVAX."
+  },
+  {
+    "term": "Account Abstraction (ERC-4337)",
+    "definition": "A proposal to improve user experience by allowing smart contracts to act as wallets. Account abstraction enables features like social recovery, gasless transactions, and batch operations, making blockchain interactions more user-friendly without requiring protocol changes."
+  },
+  {
+    "term": "Address",
+    "definition": "A unique alphanumeric identifier that represents a destination for cryptocurrency transactions. Similar to a bank account number, addresses are used to send and receive digital assets on a blockchain network."
+  },
+  {
+    "term": "Airdrop",
+    "definition": "A distribution of cryptocurrency tokens or coins to wallet addresses, typically for free. Airdrops are often used as a marketing strategy to increase awareness, reward loyal users, or distribute tokens to a community."
+  },
+  {
+    "term": "Altcoin",
+    "definition": "Any cryptocurrency other than Bitcoin. The term is short for 'alternative coin' and includes thousands of cryptocurrencies like Ethereum, Cardano, Solana, and others."
+  },
+  {
+    "term": "AMM (Automated Market Maker)",
+    "definition": "A type of decentralized exchange protocol that uses liquidity pools and algorithms to price assets. AMMs like Uniswap and PancakeSwap allow users to trade without traditional order books, using smart contracts to facilitate trades."
+  },
+  {
+    "term": "APY (Annual Percentage Yield)",
+    "definition": "The real rate of return earned on an investment, taking into account the effect of compounding interest. In DeFi, APY represents the yearly return on deposited or staked assets, including compounded earnings."
+  },
+  {
+    "term": "Block Explorer",
+    "definition": "A tool that allows users to view and search blockchain data including blocks, transactions, and addresses. Popular block explorers include Etherscan for Ethereum, Solscan for Solana, and BscScan for BNB Chain."
+  },
+  {
+    "term": "BNB Chain",
+    "definition": "A blockchain ecosystem consisting of BNB Beacon Chain and BNB Smart Chain. Formerly known as Binance Smart Chain (BSC), it's EVM-compatible and uses Proof of Staked Authority consensus."
+  },
+  {
+    "term": "Blockchain",
+    "definition": "A distributed, immutable ledger that records transactions across multiple computers. Each block contains transaction data, a timestamp, and a cryptographic hash of the previous block, creating a secure chain of records."
+  },
+  {
+    "term": "Bridge",
+    "definition": "A protocol that enables the transfer of assets and data between different blockchain networks. Bridges facilitate interoperability between blockchains, allowing users to move tokens from one chain to another."
+  },
+  {
+    "term": "BUIDL",
+    "definition": "A deliberate misspelling of 'build' emphasizing action over speculation. Derived from HODL, BUIDL represents the ethos of contributing to and building the Web3 ecosystem rather than just trading."
+  },
+  {
+    "term": "Bull Market",
+    "definition": "A market condition characterized by rising prices and optimistic investor sentiment. Bull markets typically feature increased trading volume, positive news, and widespread expectations of continued growth."
+  },
+  {
+    "term": "Burn",
+    "definition": "The permanent removal of tokens from circulation by sending them to an unrecoverable address. Token burning can reduce supply to increase scarcity and value, or remove excess tokens from a project's treasury."
+  },
+  {
+    "term": "Byzantine Fault Tolerance",
+    "definition": "The ability of a distributed system to reach consensus even when some nodes fail or act maliciously. This property is crucial for blockchain networks to maintain security and reliability in the presence of bad actors."
+  },
+  {
+    "term": "CC0",
+    "definition": "Creative Commons Zero - a public domain dedication waiving all copyright and related rights. CC0 allows creators to release work into the public domain, enabling others to freely use, modify, and build upon it."
+  },
+  {
+    "term": "CEX (Centralized Exchange)",
+    "definition": "A cryptocurrency exchange that is operated by a centralized company that acts as an intermediary. Examples include Coinbase, Binance, and Kraken. CEXs provide liquidity and user-friendly interfaces but require trust in the exchange operator."
+  },
+  {
+    "term": "Chainlink",
+    "definition": "The leading decentralized oracle network that provides real-world data to smart contracts. Chainlink uses a network of independent node operators to fetch, validate, and deliver off-chain data to blockchains. Its LINK token is used to pay node operators and secure the network."
+  },
+  {
+    "term": "Cold Wallet",
+    "definition": "A cryptocurrency wallet that is not connected to the internet, providing enhanced security. Hardware wallets and paper wallets are common types of cold storage, protecting assets from online hacking attempts."
+  },
+  {
+    "term": "Collateral",
+    "definition": "Assets pledged as security for a loan or to back a stablecoin's value. In DeFi lending, users deposit collateral to borrow other assets. If the collateral value drops below a threshold, liquidation may occur."
+  },
+  {
+    "term": "Consensus Mechanism",
+    "definition": "The process by which nodes in a blockchain network agree on the current state of the ledger. Common mechanisms include Proof of Work (PoW), Proof of Stake (PoS), and Delegated Proof of Stake (DPoS)."
+  },
+  {
+    "term": "Cross-Chain",
+    "definition": "Technology that enables communication and asset transfers between different blockchain networks. Cross-chain solutions allow developers to build applications that can interact with multiple blockchains simultaneously."
+  },
+  {
+    "term": "Cryptography",
+    "definition": "The practice of secure communication through encryption and decryption techniques. Blockchain uses cryptographic methods like hashing and digital signatures to secure transactions and ensure data integrity."
+  },
+  {
+    "term": "Custodial Wallet",
+    "definition": "A wallet where a third party controls the private keys and manages assets on behalf of the user. Exchanges often provide custodial wallets. While convenient, users must trust the custodian to secure their funds."
   },
   {
     "term": "DAO (Decentralized Autonomous Organization)",
-    "definition": "An organization governed by smart contracts and community voting, without centralized leadership.",
-    "details": "DAOs enable collective decision-making and resource management on the blockchain, with rules and operations encoded in smart contracts." 
+    "definition": "An organization governed by smart contracts and community voting, without centralized leadership. DAOs enable collective decision-making and resource management on the blockchain, with rules and operations encoded in smart contracts."
+  },
+  {
+    "term": "Degen",
+    "definition": "Short for 'degenerate,' referring to high-risk crypto traders or investors. Degens often engage in complex DeFi strategies, trade low-cap tokens, and take substantial risks in pursuit of high returns."
+  },
+  {
+    "term": "Decentralized Application (dApp)",
+    "definition": "An application that runs on a decentralized network, typically a blockchain. dApps leverage smart contracts and blockchain technology to operate without a central authority, providing increased transparency, security, and user control."
   },
   {
     "term": "DeFi (Decentralized Finance)",
-    "definition": "A movement to recreate and improve traditional financial services using blockchain technology.",
-    "details": "DeFi platforms offer services like lending, borrowing, trading, and earning interest, all without traditional banks or intermediaries." 
+    "definition": "A movement to recreate and improve traditional financial services using blockchain technology. DeFi platforms offer services like lending, borrowing, trading, and earning interest, all without traditional banks or intermediaries."
+  },
+  {
+    "term": "DEX (Decentralized Exchange)",
+    "definition": "A peer-to-peer cryptocurrency exchange that operates without a central authority. DEXs like Uniswap and SushiSwap allow users to trade directly from their wallets using smart contracts, maintaining custody of their assets."
+  },
+  {
+    "term": "Diamond Hands",
+    "definition": "Holding onto cryptocurrency or NFT investments despite market volatility or downturns. The opposite of 'paper hands,' diamond hands symbolizes conviction and long-term commitment to an investment."
+  },
+  {
+    "term": "Discord",
+    "definition": "A popular community platform used by crypto projects for communication and coordination. Most Web3 projects use Discord servers for announcements, support, and community engagement."
+  },
+  {
+    "term": "Double Spending",
+    "definition": "The risk that a digital currency can be spent twice by duplicating or falsifying the transaction record. Blockchain technology and consensus mechanisms prevent double spending by ensuring all transactions are verified and recorded immutably."
+  },
+  {
+    "term": "DYOR (Do Your Own Research)",
+    "definition": "A common reminder to independently verify information before making investment decisions. In crypto, DYOR emphasizes the importance of personal due diligence rather than blindly following others' advice."
+  },
+  {
+    "term": "EIP (Ethereum Improvement Proposal)",
+    "definition": "A design document providing information to the Ethereum community about a proposed new feature or process. EIPs describe standards for the Ethereum platform, including core protocol changes (EIP-1559 fee market, EIP-4844 proto-danksharding), client APIs, and contract standards like ERC-20 and ERC-721."
+  },
+  {
+    "term": "ENS (Ethereum Name Service)",
+    "definition": "A distributed naming system that maps human-readable names to Ethereum addresses. ENS allows users to register .eth domains, making wallet addresses easier to remember and share, similar to DNS for websites."
+  },
+  {
+    "term": "Epoch",
+    "definition": "A unit of time in a blockchain network, often defined by a specific number of blocks. In Ethereum, an epoch consists of 32 slots (approximately 6.4 minutes). Epochs are used for validator rotation and finality."
+  },
+  {
+    "term": "ERC-20",
+    "definition": "A technical standard for fungible tokens on the Ethereum blockchain. ERC-20 defines a common list of rules for Ethereum tokens, enabling seamless interaction with wallets, exchanges, and smart contracts."
+  },
+  {
+    "term": "ERC-721",
+    "definition": "A token standard for non-fungible tokens (NFTs) on the Ethereum blockchain. Each ERC-721 token is unique and represents ownership of a specific asset, commonly used for digital art and collectibles."
+  },
+  {
+    "term": "ERC-1155",
+    "definition": "A multi-token standard allowing a single contract to manage multiple token types (both fungible and non-fungible). ERC-1155 is more gas-efficient than deploying separate contracts and is widely used in gaming for managing various in-game assets."
+  },
+  {
+    "term": "Escrow",
+    "definition": "A smart contract that holds assets until predefined conditions are met. Escrow contracts act as neutral intermediaries in transactions, releasing funds only when both parties fulfill their obligations."
+  },
+  {
+    "term": "Ethereum",
+    "definition": "A decentralized, open-source blockchain platform that enables smart contracts and decentralized applications. Founded by Vitalik Buterin in 2015, Ethereum transitioned from Proof of Work to Proof of Stake in September 2022 (The Merge), reducing energy consumption by 99.95% and becoming the second-largest cryptocurrency by market cap."
+  },
+  {
+    "term": "EVM (Ethereum Virtual Machine)",
+    "definition": "The runtime environment for smart contracts on Ethereum and EVM-compatible blockchains. The EVM executes smart contract code and ensures consistent behavior across all nodes in the network."
+  },
+  {
+    "term": "Faucet",
+    "definition": "A service that distributes small amounts of cryptocurrency for free, typically on testnets. Faucets help developers obtain test tokens for building and testing applications without spending real money."
+  },
+  {
+    "term": "Fiat",
+    "definition": "Government-issued currency that is not backed by a physical commodity like gold or silver. Examples include USD, EUR, and JPY. In crypto context, fiat refers to traditional money as opposed to digital currencies."
+  },
+  {
+    "term": "Finality",
+    "definition": "The guarantee that a blockchain transaction cannot be reversed or altered once confirmed. Different blockchains achieve finality at different speeds - Bitcoin requires multiple confirmations (probabilistic finality), while some PoS chains offer instant finality."
+  },
+  {
+    "term": "Flash Loan",
+    "definition": "An uncollateralized loan that must be borrowed and repaid within a single blockchain transaction. Flash loans enable complex DeFi strategies like arbitrage and collateral swaps, but can also be exploited for attacks. Popularized by Aave and dYdX."
+  },
+  {
+    "term": "FOMO (Fear of Missing Out)",
+    "definition": "The anxiety that others are profiting from an opportunity you're not participating in. FOMO often drives impulsive investment decisions during market rallies and can lead to buying at price peaks."
+  },
+  {
+    "term": "Fork",
+    "definition": "A change to a blockchain's protocol that creates a divergence in the blockchain. Hard forks create permanent splits (like Bitcoin Cash from Bitcoin), while soft forks are backward-compatible upgrades."
+  },
+  {
+    "term": "Fractionalization",
+    "definition": "The process of dividing a single asset into multiple smaller tradeable pieces. NFT fractionalization allows multiple people to own shares of expensive NFTs, increasing accessibility and liquidity."
+  },
+  {
+    "term": "Front-running",
+    "definition": "The practice of observing pending transactions in the mempool and submitting a similar transaction with higher gas fees to execute first. Front-running exploits public transaction visibility for profit, particularly common in DEX trading and NFT minting."
+  },
+  {
+    "term": "FUD (Fear, Uncertainty, and Doubt)",
+    "definition": "Negative information spread to undermine confidence in a project or asset. FUD can be based on legitimate concerns or used as a manipulation tactic to drive down prices."
+  },
+  {
+    "term": "Fungible Token",
+    "definition": "A token where each unit is interchangeable and identical in value. Currencies like Bitcoin and Ethereum are fungible - one BTC is always equal to another BTC in value and function."
+  },
+  {
+    "term": "Gas",
+    "definition": "A unit of measurement for the computational work required to execute transactions or smart contracts on Ethereum. Since EIP-1559, gas fees consist of a base fee (burned) and optional priority fee (tip to validators). Higher priority fees result in faster transaction processing."
+  },
+  {
+    "term": "Gas Limit",
+    "definition": "The maximum amount of gas a user is willing to spend on a transaction. Setting an appropriate gas limit ensures transactions complete successfully while avoiding overpayment."
+  },
+  {
+    "term": "Gas Wars",
+    "definition": "A phenomenon where users compete by paying increasingly high gas fees to ensure their transactions are processed first. Common during popular NFT mints or time-sensitive DeFi opportunities, gas wars can drive fees to extreme levels."
+  },
+  {
+    "term": "Generative Art",
+    "definition": "Art created through algorithms that combine randomness with predefined rules and layers. Many NFT collections use generative art to create unique variations from a set of traits, with rarity determined by algorithms."
+  },
+  {
+    "term": "Genesis Block",
+    "definition": "The first block in a blockchain, also known as Block 0 or Block 1. The genesis block is hardcoded into the blockchain software and serves as the foundation for all subsequent blocks."
+  },
+  {
+    "term": "GM (Good Morning)",
+    "definition": "A friendly greeting commonly used in Web3 communities regardless of time of day. GM has become a cultural staple in crypto Twitter and Discord, symbolizing community and positivity."
+  },
+  {
+    "term": "GMI (Gonna Make It)",
+    "definition": "An expression of confidence that someone will succeed in crypto. Often used to encourage or acknowledge smart decisions and positive behavior in the crypto community."
+  },
+  {
+    "term": "Gwei",
+    "definition": "A denomination of Ethereum's native currency (ETH), commonly used to measure gas prices. 1 Gwei equals 0.000000001 ETH (10^-9 ETH). Gas prices are typically expressed in Gwei for convenience."
+  },
+  {
+    "term": "Hard Fork",
+    "definition": "A protocol upgrade that is not backward-compatible, creating a permanent divergence in the blockchain. Hard forks can create new cryptocurrencies (like Ethereum Classic from Ethereum) or represent major network upgrades."
+  },
+  {
+    "term": "Halving",
+    "definition": "An event where the block reward for miners is cut in half, reducing the rate of new coin creation. Bitcoin halving occurs approximately every four years and is a key mechanism for controlling supply and inflation."
+  },
+  {
+    "term": "Hash",
+    "definition": "A fixed-length alphanumeric string produced by a cryptographic function from input data. Hashes are used extensively in blockchain for transaction IDs, block identifiers, and ensuring data integrity."
+  },
+  {
+    "term": "Hash Rate",
+    "definition": "The computational power used to mine and process transactions on a proof-of-work blockchain. Higher hash rates indicate more mining activity and network security, measured in hashes per second (H/s)."
+  },
+  {
+    "term": "HODL",
+    "definition": "A misspelling of 'hold' that became a meme meaning to hold cryptocurrency long-term. Originating from a 2013 Bitcoin forum post, HODL represents the strategy of holding through market volatility."
+  },
+  {
+    "term": "Hot Wallet",
+    "definition": "A cryptocurrency wallet that is connected to the internet, allowing quick access to funds. Hot wallets are convenient for frequent transactions but are more vulnerable to hacking compared to cold wallets."
+  },
+  {
+    "term": "ICO (Initial Coin Offering)",
+    "definition": "A fundraising method where new cryptocurrency projects sell tokens to early investors. ICOs were popular in 2017-2018 but have largely been replaced by IEOs, IDOs, and other token distribution methods."
+  },
+  {
+    "term": "IDO (Initial DEX Offering)",
+    "definition": "A token launch conducted on a decentralized exchange platform. IDOs provide immediate liquidity and trading access, offering a more decentralized alternative to ICOs and IEOs."
+  },
+  {
+    "term": "Impermanent Loss",
+    "definition": "The temporary loss of funds experienced by liquidity providers in AMM pools due to price volatility. When token prices diverge significantly from when they were deposited, the value of the LP position may be less than holding the tokens."
+  },
+  {
+    "term": "IPFS (InterPlanetary File System)",
+    "definition": "A distributed file storage protocol for storing and accessing files, websites, and data. IPFS is commonly used to store NFT metadata and images in a decentralized manner, ensuring permanence and censorship resistance."
+  },
+  {
+    "term": "Layer 1",
+    "definition": "The base blockchain architecture that processes and records transactions. Examples include Bitcoin, Ethereum, Solana, and Cardano. L1s have their own native tokens and consensus mechanisms."
+  },
+  {
+    "term": "Layer 2",
+    "definition": "A secondary framework built on top of a Layer 1 blockchain to improve scalability and reduce transaction costs. Examples include optimistic rollups (Arbitrum, Optimism), ZK-rollups (zkSync, StarkNet), and sidechains (Polygon). L2s process transactions off-chain and settle on the main chain."
+  },
+  {
+    "term": "LFG (Let's F***ing Go)",
+    "definition": "An enthusiastic expression of excitement or anticipation in the crypto community. LFG is commonly used to rally support for projects, celebrate milestones, or express bullish sentiment."
+  },
+  {
+    "term": "Liquidity",
+    "definition": "The ease with which an asset can be bought or sold without causing significant price changes. High liquidity means assets can be traded quickly with minimal slippage, while low liquidity leads to larger price impacts."
+  },
+  {
+    "term": "Liquidity Pool",
+    "definition": "A collection of tokens locked in a smart contract that provides liquidity for decentralized trading. Users deposit token pairs into pools and earn trading fees in proportion to their contribution. Advanced AMMs like Uniswap V3 support concentrated liquidity for capital efficiency."
+  },
+  {
+    "term": "Liquidity Provider (LP)",
+    "definition": "A user who deposits assets into a liquidity pool to facilitate trading. LPs earn rewards through trading fees but face risks like impermanent loss. They receive LP tokens representing their pool share."
+  },
+  {
+    "term": "Mainnet",
+    "definition": "The primary, production-ready blockchain network where actual transactions occur and have real value. Mainnet is distinguished from testnets, which are used for development and testing with worthless tokens."
+  },
+  {
+    "term": "Market Cap",
+    "definition": "The total value of a cryptocurrency, calculated by multiplying circulating supply by current price. Market cap is used to rank cryptocurrencies and gauge their relative size and dominance in the market."
+  },
+  {
+    "term": "Mempool",
+    "definition": "The waiting area for unconfirmed transactions before they are included in a block. Transactions in the mempool are prioritized based on fees, with higher-paying transactions processed first."
+  },
+  {
+    "term": "Merkle Tree",
+    "definition": "A data structure that efficiently summarizes and verifies large sets of data using cryptographic hashes. Blockchains use Merkle trees to verify transaction integrity without downloading entire blocks."
+  },
+  {
+    "term": "MetaMask",
+    "definition": "A popular browser extension and mobile wallet for interacting with Ethereum and EVM-compatible blockchains. MetaMask allows users to manage crypto assets, connect to dApps, and sign transactions securely from their browser."
+  },
+  {
+    "term": "MEV (Maximal Extractable Value)",
+    "definition": "The maximum value that can be extracted from block production beyond standard rewards by reordering, including, or censoring transactions. Validators and searchers exploit MEV through strategies like front-running, back-running, and sandwich attacks, impacting users through slippage and failed transactions."
+  },
+  {
+    "term": "Metaverse",
+    "definition": "A collective virtual shared space created by the convergence of physical and digital reality. In Web3, metaverses like Decentraland and The Sandbox use blockchain for digital ownership and economies."
+  },
+  {
+    "term": "Miner",
+    "definition": "A participant in a proof-of-work blockchain network who uses computational power to validate transactions and create new blocks. Miners compete to solve cryptographic puzzles and are rewarded with newly minted coins and transaction fees."
+  },
+  {
+    "term": "Mining",
+    "definition": "The process of validating transactions and adding new blocks to a proof-of-work blockchain. Mining requires significant computational resources and electricity, securing the network through economic incentives."
+  },
+  {
+    "term": "Minting",
+    "definition": "The process of creating new tokens or NFTs and recording them on a blockchain. Minting can refer to creating new cryptocurrency supply or generating unique NFTs from digital content."
+  },
+  {
+    "term": "Moon",
+    "definition": "A term describing dramatic price increases, as in 'to the moon.' When someone says a token will moon, they believe it will experience significant price appreciation."
+  },
+  {
+    "term": "Multi-Signature Wallet",
+    "definition": "A cryptocurrency wallet that requires multiple private keys to authorize a transaction. Multi-sig wallets enhance security by requiring approval from multiple parties, commonly used for DAOs and treasuries."
+  },
+  {
+    "term": "NFA (Not Financial Advice)",
+    "definition": "A disclaimer used to clarify that shared information should not be considered professional financial advice. Commonly used in crypto discussions to avoid legal liability while sharing opinions or market analysis."
+  },
+  {
+    "term": "NFT (Non-Fungible Token)",
+    "definition": "A unique digital asset that represents ownership of a specific item or piece of content on the blockchain. Built on standards like ERC-721 or ERC-1155, NFTs are used for digital art, collectibles, gaming items, event tickets, identity verification, and more. Each NFT is distinct and cannot be exchanged on a one-to-one basis with another NFT."
+  },
+  {
+    "term": "NGMI (Not Gonna Make It)",
+    "definition": "An expression suggesting someone made a poor decision or lacks understanding. The opposite of GMI, NGMI is used (often jokingly) to criticize bad investment decisions or negative behavior."
+  },
+  {
+    "term": "Node",
+    "definition": "A computer that participates in a blockchain network by maintaining a copy of the ledger and validating transactions. Full nodes store the entire blockchain history, while light nodes store only recent data. Nodes ensure network decentralization."
+  },
+  {
+    "term": "Non-Custodial Wallet",
+    "definition": "A wallet where the user has full control of their private keys and assets. Non-custodial wallets provide true ownership and security but require users to manage their own key backups."
+  },
+  {
+    "term": "Nonce",
+    "definition": "A number used once in cryptographic communication, often used in mining to find valid block hashes. In Ethereum, nonce also refers to the transaction count from an account, ensuring correct transaction ordering."
+  },
+  {
+    "term": "Oracle",
+    "definition": "A service that provides external, real-world data to smart contracts on the blockchain. Oracles bridge the gap between on-chain and off-chain data, supplying price feeds, weather data, sports scores, and more. Decentralized oracle networks like Chainlink aggregate data from multiple sources to ensure reliability and prevent single points of failure."
+  },
+  {
+    "term": "Optimism",
+    "definition": "An Ethereum Layer 2 scaling solution using optimistic rollup technology. Optimism processes transactions off-chain and posts compressed data to Ethereum, significantly reducing gas costs while maintaining security. The OP Stack provides modular components for building custom L2 chains, powering the Superchain vision of interconnected rollups."
+  },
+  {
+    "term": "P2E (Play-to-Earn)",
+    "definition": "Gaming model where players can earn cryptocurrency or NFTs through gameplay. P2E games like Axie Infinity reward players with tradeable assets, creating real economic opportunities through gaming."
+  },
+  {
+    "term": "Paper Hands",
+    "definition": "Someone who sells their cryptocurrency or NFTs quickly, especially during market dips. The opposite of diamond hands, paper hands implies weak conviction and susceptibility to fear-based selling."
+  },
+  {
+    "term": "Peer-to-Peer (P2P)",
+    "definition": "A decentralized network architecture where participants interact directly without intermediaries. Blockchain networks operate as P2P systems, allowing users to transact and share data without central servers."
+  },
+  {
+    "term": "PFP (Profile Picture)",
+    "definition": "NFTs designed to be used as social media profile pictures. Popular PFP collections include Bored Ape Yacht Club and CryptoPunks, serving as digital status symbols and community identifiers."
+  },
+  {
+    "term": "Plasma",
+    "definition": "An early Layer 2 scaling framework for Ethereum that uses child chains to process transactions off the main chain. While largely superseded by rollups, Plasma introduced important concepts for scaling including fraud proofs and periodic commitments to the main chain."
+  },
+  {
+    "term": "Polygon",
+    "definition": "A Layer 2 scaling solution and sidechain network for Ethereum. Polygon (formerly Matic) provides fast and cheap transactions while maintaining Ethereum compatibility. Its native token is MATIC."
+  },
+  {
+    "term": "Private Key",
+    "definition": "A secret cryptographic code that allows a user to access and control their cryptocurrency. Private keys must be kept secure and never shared. Losing a private key means losing access to the associated funds permanently."
+  },
+  {
+    "term": "Proof of Authority (PoA)",
+    "definition": "A consensus mechanism where validators are pre-approved based on their identity and reputation. PoA offers high throughput and low energy consumption but is more centralized than PoW or PoS."
+  },
+  {
+    "term": "Proof of History (PoH)",
+    "definition": "A consensus mechanism that uses cryptographic timestamps to establish chronological order of events. Pioneered by Solana, PoH enables high transaction throughput by allowing validators to prove time has passed without communicating."
+  },
+  {
+    "term": "Proof of Stake (PoS)",
+    "definition": "A consensus mechanism where validators are chosen to create new blocks based on the amount of cryptocurrency they stake. PoS is more energy-efficient than PoW and is used by Ethereum 2.0, Cardano, and many other blockchains."
+  },
+  {
+    "term": "Proof of Work (PoW)",
+    "definition": "A consensus mechanism where miners compete to solve complex mathematical problems to validate transactions. PoW provides security through computational difficulty and is used by Bitcoin and earlier versions of Ethereum."
+  },
+  {
+    "term": "Public Key",
+    "definition": "A cryptographic code that allows others to send cryptocurrency to your wallet. Public keys are derived from private keys and can be safely shared. They work with private keys to sign and verify transactions."
+  },
+  {
+    "term": "Pump and Dump",
+    "definition": "A market manipulation scheme where the price is artificially inflated then sold off for profit. Coordinated buying creates hype and FOMO, driving prices up before orchestrators sell, leaving late buyers with losses."
+  },
+  {
+    "term": "Rollup",
+    "definition": "A Layer 2 scaling solution that processes transactions off-chain and posts compressed data to Layer 1. Optimistic rollups and ZK-rollups offer different approaches to scaling, both significantly reducing gas costs."
+  },
+  {
+    "term": "Reorg (Reorganization)",
+    "definition": "An event where a blockchain's history is restructured when a longer chain is discovered, causing previously confirmed blocks to be replaced. Reorgs can occur naturally due to network latency or maliciously in 51% attacks. Deeper confirmations reduce reorg risk."
+  },
+  {
+    "term": "RPC (Remote Procedure Call)",
+    "definition": "A protocol that enables communication between a client application and a blockchain node. RPC nodes provide the infrastructure for applications to read blockchain data and submit transactions."
+  },
+  {
+    "term": "Rug Pull",
+    "definition": "A scam where developers abandon a project and run away with investors' funds. Common in DeFi and NFT projects with low liquidity locks or unaudited smart contracts. Always research projects thoroughly."
+  },
+  {
+    "term": "Satoshi",
+    "definition": "The smallest unit of Bitcoin, equal to 0.00000001 BTC. Named after Bitcoin's creator Satoshi Nakamoto, this denomination allows for precise transactions even at high BTC prices."
+  },
+  {
+    "term": "Satoshi Nakamoto",
+    "definition": "The pseudonymous creator of Bitcoin who published the Bitcoin whitepaper in 2008. Satoshi's true identity remains unknown. They disappeared from public view in 2011 after releasing Bitcoin to the community."
+  },
+  {
+    "term": "Sandwich Attack",
+    "definition": "A form of MEV exploitation where an attacker places one transaction before and one after a victim's transaction to profit from price movement. The attacker front-runs by buying, lets the victim's trade push the price up, then back-runs by selling, causing increased slippage for the victim."
+  },
+  {
+    "term": "Seed Phrase",
+    "definition": "A sequence of 12-24 words that serves as a backup to recover a cryptocurrency wallet. Also called a recovery phrase or mnemonic phrase. Anyone with access to the seed phrase can control the wallet."
+  },
+  {
+    "term": "Shill",
+    "definition": "To aggressively promote a cryptocurrency or NFT project, often for personal gain. While sharing legitimate excitement is common, shilling typically implies exaggerated or misleading promotional tactics."
+  },
+  {
+    "term": "Sidechain",
+    "definition": "A separate blockchain that runs parallel to a main chain and is connected via a two-way bridge. Sidechains enable scalability and experimentation with new features while leveraging the main chain's security."
+  },
+  {
+    "term": "Slashing",
+    "definition": "A penalty mechanism in Proof of Stake networks where validators lose a portion of their staked assets for malicious or negligent behavior. Slashing occurs for actions like double-signing blocks, extended downtime, or attempting to manipulate the network, ensuring validators act honestly."
+  },
+  {
+    "term": "Slippage",
+    "definition": "The difference between the expected price of a trade and the actual executed price. Slippage occurs due to market volatility and low liquidity, particularly affecting large trades in DeFi."
+  },
+  {
+    "term": "Smart Contract Wallet",
+    "definition": "A wallet controlled by smart contract code rather than a single private key. Smart contract wallets offer advanced features like social recovery, spending limits, and multi-signature requirements."
+  },
+  {
+    "term": "Smart Contract",
+    "definition": "A self-executing contract with the terms of the agreement directly written into code. Smart contracts run on blockchain networks and automatically enforce and execute the terms of an agreement when predefined conditions are met. They are immutable and transparent, reducing the need for intermediaries."
+  },
+  {
+    "term": "Soft Fork",
+    "definition": "A backward-compatible upgrade to a blockchain protocol. Soft forks don't create a new blockchain, allowing upgraded and non-upgraded nodes to remain compatible."
+  },
+  {
+    "term": "Solana",
+    "definition": "A high-performance Layer 1 blockchain using Proof of History and Proof of Stake. Solana is known for fast transaction speeds and low fees. Its native token is SOL, used for staking and transaction fees."
+  },
+  {
+    "term": "Solidity",
+    "definition": "The primary programming language for writing smart contracts on Ethereum and EVM-compatible blockchains. Solidity is a statically-typed, object-oriented language influenced by JavaScript, Python, and C++."
+  },
+  {
+    "term": "Soulbound Token (SBT)",
+    "definition": "A non-transferable NFT that is permanently bound to a wallet address. Proposed by Vitalik Buterin, SBTs represent identity, credentials, achievements, or reputation that cannot be sold or transferred, enabling decentralized identity and social reputation systems."
+  },
+  {
+    "term": "SPL Token",
+    "definition": "The token standard on the Solana blockchain, similar to ERC-20 on Ethereum. SPL tokens are created using the Solana Program Library and can represent fungible or non-fungible assets."
+  },
+  {
+    "term": "Stablecoin",
+    "definition": "A cryptocurrency designed to maintain a stable value by being pegged to a reserve asset like the US dollar. Examples include USDC, USDT, and DAI. Stablecoins reduce volatility and facilitate trading, lending, and payments."
+  },
+  {
+    "term": "State Channel",
+    "definition": "A Layer 2 scaling solution where participants conduct multiple transactions off-chain and only settle the final state on-chain. State channels enable instant, low-cost transactions for use cases like micropayments and gaming. Lightning Network for Bitcoin is a prominent example."
+  },
+  {
+    "term": "Staking",
+    "definition": "The process of locking up cryptocurrency to support blockchain operations and earn rewards. In PoS networks, staking helps secure the network while providing passive income to participants."
+  },
+  {
+    "term": "Testnet",
+    "definition": "A blockchain network used for testing and development purposes with no real monetary value. Developers use testnets to experiment and debug smart contracts before deploying to mainnet."
+  },
+  {
+    "term": "Token",
+    "definition": "A digital asset created and managed on an existing blockchain platform. Tokens can represent various assets including currency, utility, governance rights, or ownership. They differ from coins which have their own blockchains."
+  },
+  {
+    "term": "Tokenomics",
+    "definition": "The economic model and structure governing a cryptocurrency or token, including supply, distribution, and incentives. Good tokenomics align incentives between users, developers, and investors for long-term project sustainability."
+  },
+  {
+    "term": "TPS (Transactions Per Second)",
+    "definition": "A measure of a blockchain's transaction processing capacity. Higher TPS indicates better scalability. Bitcoin processes ~7 TPS, Ethereum ~15 TPS, while Solana can handle thousands."
+  },
+  {
+    "term": "TVL (Total Value Locked)",
+    "definition": "The total amount of assets deposited in a DeFi protocol or platform. TVL is a key metric for measuring the adoption and success of DeFi platforms, indicating user trust and liquidity."
+  },
+  {
+    "term": "Unstoppable Domains",
+    "definition": "A blockchain-based domain name service providing human-readable wallet addresses. Similar to ENS, Unstoppable Domains offers extensions like .crypto, .nft, and .blockchain as NFTs on various chains."
+  },
+  {
+    "term": "Uniswap",
+    "definition": "The pioneering decentralized exchange protocol using an automated market maker (AMM) model. Launched in 2018, Uniswap revolutionized DeFi by enabling permissionless token trading through liquidity pools. Uniswap V3 introduced concentrated liquidity for improved capital efficiency."
+  },
+  {
+    "term": "Validator",
+    "definition": "A participant in a proof-of-stake blockchain who validates transactions and creates new blocks. Validators stake cryptocurrency as collateral and earn rewards for honest behavior while risking penalties for malicious actions."
+  },
+  {
+    "term": "WAGMI (We're All Gonna Make It)",
+    "definition": "An optimistic rallying cry expressing confidence in collective success. WAGMI embodies the community spirit and shared belief in Web3's long-term potential, often used during market downturns."
+  },
+  {
+    "term": "Wrapped Token",
+    "definition": "A tokenized version of a cryptocurrency from another blockchain, making it compatible with a different network's standards. Examples include WETH (Wrapped Ether for ERC-20 compatibility), wBTC (Bitcoin on Ethereum), and wSOL (Wrapped Solana). Wrapped tokens maintain 1:1 parity with their underlying assets."
+  },
+  {
+    "term": "Wallet",
+    "definition": "Software or hardware that stores private keys and enables users to send, receive, and manage cryptocurrency. Wallets don't actually store coins but provide access to blockchain addresses. Types include hot wallets, cold wallets, and custodial wallets."
+  },
+  {
+    "term": "Web3",
+    "definition": "The vision of a decentralized internet built on blockchain technology where users own their data and digital assets. Web3 contrasts with Web2's centralized platforms, emphasizing user sovereignty, transparency, and decentralization."
+  },
+  {
+    "term": "Wei",
+    "definition": "The smallest denomination of Ether, named after Wei Dai, a cryptography pioneer. 1 ETH equals 1,000,000,000,000,000,000 Wei (10^18 Wei). Wei is used for precise calculations in smart contracts."
+  },
+  {
+    "term": "Wen",
+    "definition": "A misspelling of 'when' used to ask about timing of events. Commonly used in phrases like 'wen moon?' or 'wen lambo?' to ironically question when prices will rise or profits materialize."
+  },
+  {
+    "term": "Whale",
+    "definition": "An individual or entity that holds a large amount of cryptocurrency, capable of influencing market prices. Whale watching involves monitoring large wallet movements to anticipate market trends and potential price impacts."
+  },
+  {
+    "term": "Whitelist",
+    "definition": "A pre-approved list of addresses allowed to participate in exclusive events like NFT mints or token sales. Getting whitelisted often requires early community participation, completing tasks, or winning contests."
+  },
+  {
+    "term": "Whitepaper",
+    "definition": "A technical document that outlines a cryptocurrency project's purpose, technology, and roadmap. Bitcoin's whitepaper by Satoshi Nakamoto is the most famous example, establishing the foundation for blockchain technology."
+  },
+  {
+    "term": "Yield Farming",
+    "definition": "The practice of maximizing returns by moving crypto assets across DeFi protocols to earn the highest yields. Yield farmers provide liquidity, stake tokens, and leverage various strategies to optimize returns, though with increased risk."
+  },
+  {
+    "term": "Zero-Knowledge Proof",
+    "definition": "A cryptographic method that allows one party to prove they know something without revealing the information itself. ZK proofs enable privacy and scalability in blockchains, used in protocols like Zcash and ZK-rollups."
   }
 ]

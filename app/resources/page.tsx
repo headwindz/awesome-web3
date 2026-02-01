@@ -1,34 +1,26 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ResourceCard } from "@/app/resources/resource-card"
-import { ArrowLeftIcon } from "@radix-ui/react-icons"
-import Link from "next/link"
-import { CATEGORIES_LIST, RESOURCES, Category } from "./constants"
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { ResourceCard } from '@/app/resources/resource-card'
+import { CATEGORIES_LIST, RESOURCES, Category } from './constants'
+import { Hero } from '../../components/hero'
 
 export default function ResourcesPage() {
   const [selectedCategory, setSelectedCategory] = useState(Category.All)
 
   const filteredResources =
-    selectedCategory === Category.All ? RESOURCES : RESOURCES.filter((resource) => resource.category === selectedCategory)
+    selectedCategory === Category.All
+      ? RESOURCES
+      : RESOURCES.filter((resource) => resource.category === selectedCategory)
 
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Section */}
-      <section className="container mx-auto py-4 px-4 md:py-6">
-        <Link
-          href="/"
-          className="text-sm text-muted-foreground mb-2 gap-1.5 inline-flex items-center hover:text-foreground"
-        >
-          <ArrowLeftIcon className="size-3.5" />
-          Back to Timeline
-        </Link>
-        <h1 className="font-bold text-balance mb-1 text-2xl md:text-3xl">Resources</h1>
-        <p className="text-muted-foreground text-sm text-balance max-w-3xl">
-          Curated links to help you learn more about Web3, blockchain, and decentralized technology
-        </p>
-      </section>
+      <Hero
+        title="Resources"
+        description="Curated links to help you learn more about Web3, blockchain, and decentralized technology"
+      />
 
       {/* Filter Section */}
       <section className="container mx-auto mb-4 px-4">
@@ -38,7 +30,9 @@ export default function ResourcesPage() {
             return (
               <Button
                 key={category.name}
-                variant={selectedCategory === category.name ? "default" : "outline"}
+                variant={
+                  selectedCategory === category.name ? 'default' : 'outline'
+                }
                 size="sm"
                 className="h-7 text-xs px-2.5 gap-1.5"
                 onClick={() => setSelectedCategory(category.name)}
@@ -55,7 +49,12 @@ export default function ResourcesPage() {
       <section className="container mx-auto px-4 pb-8">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {filteredResources.map((resource, index) => (
-            <ResourceCard key={resource.id} resource={resource} index={index} showCategory={selectedCategory === Category.All} />
+            <ResourceCard
+              key={resource.id}
+              resource={resource}
+              index={index}
+              showCategory={selectedCategory === Category.All}
+            />
           ))}
         </div>
       </section>

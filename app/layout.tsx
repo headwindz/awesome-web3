@@ -2,6 +2,7 @@ import type React from 'react'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from 'next-themes'
 import { Header } from '@/components/header'
+import { BackToTop } from '@/components/back-to-top'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
@@ -35,6 +36,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <BackToTop />
         </ThemeProvider>
         <Analytics />
       </body>
