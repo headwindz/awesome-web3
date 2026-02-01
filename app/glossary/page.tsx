@@ -81,15 +81,26 @@ export default function Glossary() {
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Hero Section */}
+      {/* Hero Section with Search */}
       <div className="border-b border-border">
         <div className="container mx-auto px-6 py-16 lg:py-24">
           <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-6 text-balance">
             Web3 Glossary
           </h1>
-          <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-8">
             Your comprehensive guide to understanding blockchain, cryptocurrency, and decentralized technology terminology.
           </p>
+          {/* Search */}
+          <div className="relative max-w-xl">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-5 text-muted-foreground" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search terms..."
+              className="w-full bg-muted/50 border border-border rounded-xl text-base py-3.5 pl-12 pr-4 placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+            />
+          </div>
         </div>
       </div>
 
@@ -97,18 +108,6 @@ export default function Glossary() {
         <div className="flex flex-col lg:flex-row">
           {/* Sidebar - Fixed on desktop */}
           <aside className="lg:w-64 lg:shrink-0 py-8 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto">
-            {/* Search */}
-            <div className="relative mb-8">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-5 text-muted-foreground" />
-              <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search terms..."
-                className="w-full bg-muted/50 border border-border rounded-xl text-base py-3 pl-12 pr-4 placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
-              />
-            </div>
-
             {/* Alphabet Navigation */}
             <nav className="space-y-1">
               <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-4 block">
