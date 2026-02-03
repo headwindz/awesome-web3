@@ -60,7 +60,7 @@ export function Terms({ letters, groupedByLetter, query = '' }: TermsProps) {
                     <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
                       {highlightText(item.term, query)}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed line-clamp-2">
+                    <p className="text-muted-foreground leading-relaxed">
                       {highlightText(item.definition, query)}
                     </p>
                   </div>
