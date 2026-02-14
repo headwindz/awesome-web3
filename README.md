@@ -65,8 +65,9 @@ awesome-web3/
 │   ├── glossary/          # Glossary feature
 │   └── resources/         # Resources section
 ├── components/            # Reusable React components
-├── events/                # MDX files for timeline events
-├── data/                  # JSON data files
+├── data/                  # Data files
+│   ├── events/            # MDX files for timeline events
+│   └── glossary.json      # Glossary definitions
 ├── lib/                   # Utility functions and helpers
 └── public/                # Static assets
 ```
@@ -85,7 +86,7 @@ Contributions are welcome! Here's how you can help:
 Create a new MDX file in the appropriate year/month directory:
 
 ```bash
-events/YYYY/MM/event-name.mdx
+data/events/YYYY/MM/event-name.mdx
 ```
 
 ### Adding a new glossary term

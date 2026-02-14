@@ -33,7 +33,7 @@ const MONTHS = [
   'DEC',
 ] as const
 
-const eventsDirectory = path.join(process.cwd(), 'events')
+const eventsDirectory = path.join(process.cwd(), 'data', 'events')
 
 function getCategoryFromYear(year: number): string {
   if (year >= 2008 && year <= 2013) return '2008-2013'
