@@ -363,4 +363,13 @@ export const RESOURCES: Resource[] = [
     url: 'https://github.com/OffcierCia/DeFi-Developer-Road-Map',
     category: Category.Roadmap,
   },
+  {
+    title: 'HackQuest Learning Track',
+    description: 'Interactive learning platform for blockchain and Web3',
+    url: 'https://www.hackquest.io/learning-track',
+    category: Category.LearningResources,
+  },
+  {
+    url 
+  }
 ]
