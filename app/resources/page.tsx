@@ -78,7 +78,7 @@ export default function ResourcesPage() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {filteredResources.map((resource, index) => (
             <ResourceCard
-              key={resource.id}
+              key={index}
               resource={resource}
               index={index}
               showCategory={selectedCategory === Category.All}

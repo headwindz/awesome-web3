@@ -3,7 +3,6 @@ import { ExternalLinkIcon } from '@radix-ui/react-icons'
 import { CATEGORIES_LIST } from './constants'
 
 type Resource = {
-  id: string
   title: string
   description: string
   url: string

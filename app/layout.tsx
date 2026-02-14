@@ -11,7 +11,7 @@ const _geist = Geist({ subsets: ['latin'] })
 const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Awesome web3',
+  title: 'Awesome Web3',
   description: 'Awesome timeline of web3 and blockchain technology evolution.',
   icons: {
     icon: '/icon.svg',
