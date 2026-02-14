@@ -19,7 +19,7 @@ interface EventProps {
 
 export function Event({ event }: EventProps) {
   const { month, year, title, tags, mdxContent } = event
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(true)
   const [isVisible, setIsVisible] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
 
