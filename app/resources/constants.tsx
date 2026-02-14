@@ -369,7 +369,4 @@ export const RESOURCES: Resource[] = [
     url: 'https://www.hackquest.io/learning-track',
     category: Category.LearningResources,
   },
-  {
-    url 
-  }
 ]
