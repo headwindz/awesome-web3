@@ -24,6 +24,7 @@ A comprehensive web3 educational platform featuring a complete timeline of crypt
 - Filter resources by category for easy discovery
 
 ## 🚀 Getting started - Local development
+- [n8n Solana Mint/Program Monitor](https://github.com/DeusAcc/n8n-solana-mint-monitor) - Free n8n workflow that watches an SPL mint or program ID and alerts on new transactions via Telegram, no API key needed.
 
 ### Prerequisites
 
