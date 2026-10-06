@@ -369,4 +369,10 @@ export const RESOURCES: Resource[] = [
     url: 'https://www.hackquest.io/learning-track',
     category: Category.LearningResources,
   },
+  {
+    title: 'HostDeFi',
+    description: 'Free multi-chain token risk scanner — instant on-chain safety grades for Solana + 7 EVM chains',
+    url: 'https://hostdefi.com',
+    category: Category.DeveloperTools,
+  },
 ]
